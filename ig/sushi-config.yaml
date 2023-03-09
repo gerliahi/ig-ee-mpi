@@ -83,7 +83,7 @@ menu:
   Juhendid: 
     Patsiendid: patient.html
     Identifikaatorid: identifiers.html
-  Artifaktid: artifacts.html
+  Artefaktid: artifacts.html
   Sisukord: toc.html
   Muu:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html
