@@ -80,6 +80,20 @@ Description: "MPI Patient verified during reception."
 * contact ..0
 
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.system from PatientIdentity (extensible)
+//* identifier.system ^short = "Identifitseerimissüsteem"
+* identifier.system ^short = "Identification system"
+* identifier.value 1..1 MS
+//* identifier.value ^short = "Patsiendi identifikaator või dokumendi number"
+* identifier.value ^short = "Patient identifier or document number"
+* identifier.period MS
+//* identifier.period ^short = "Dokumendi kehtivusperiood."
+* identifier.period ^short = "Validity period of the identifier of identification document."
+//* identifier.assigner ^short = "Dokumendi väljastanud organisatsioon. Võib kasutada nii viitena organisatsioonile või vaba tekstina."
+* identifier.assigner ^short = "Organization that issued the document. Can be used as a reference to an organization or as free text."
+
+/*
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
@@ -88,7 +102,6 @@ Description: "MPI Patient verified during reception."
 * identifier contains ni 0..* MS
 * identifier[ni] ^short = "Riiklik identifikaator"
 * identifier[ni].system from PatientIdentityNI (extensible)
-//* identifier[ni].system = PIDNI
 * identifier[ni].system ^short = "Süsteemiväärtus peab algama urn-iga 'urn:pin:hl7.ee:pid:ni:' ja lõppema 3-kohalise riigikoodiga."
 * identifier[ni].value 1..1 MS
 * identifier[ni].value ^short = "Isikukood või väisriigi riiklik identifikaator"
@@ -97,7 +110,6 @@ Description: "MPI Patient verified during reception."
 * identifier[passport] ^short = "Pass"
 * identifier[passport].system 1..1 MS
 * identifier[passport].system from PatientIdentityPPN (extensible)
-//* identifier[passport].system = PIDPPN
 * identifier[passport].system ^short = "Süsteemiväärtus peab algama urn-iga 'urn:pin:hl7.ee:pid:ppn:' ja lõppema selle riigi 3-kohalise koodiga, kus dokument väljastati."
 * identifier[passport].value 1..1 MS
 * identifier[passport].value ^short = "Passinumber"
@@ -109,7 +121,6 @@ Description: "MPI Patient verified during reception."
 * identifier[idcard] ^short = "ID-card"
 * identifier[idcard].system 1..1 MS
 * identifier[idcard].system from PatientIdentityCZ (extensible)
-//* identifier[idcard].system = PIDCZ
 * identifier[idcard].system ^short = "Süsteemiväärtus peab algama urn-iga 'urn:pin:hl7.ee:pid:cz:' ja lõppema selle riigi 3-kohalise koodiga, kus dokument väljastati."
 * identifier[idcard].value 1..1 MS
 * identifier[idcard].value ^short = "ID-kaardi number"
@@ -128,7 +139,6 @@ Description: "MPI Patient verified during reception."
 * identifier[bct] ^short = "Sünnitunnistus"
 * identifier[bct].system 1..1 MS
 * identifier[bct].system from PatientIdentityBCT (extensible)
-//* identifier[bct].system = PIDBCT
 * identifier[bct].system ^short = "Süsteemiväärtus peab algama urn-iga 'urn:pin:hl7.ee:pid:bct:' ja lõppema selle riigi 3-kohalise koodiga, kus dokument väljastati."
 * identifier[bct].value 1..1 MS
 * identifier[bct].value ^short = "Sünnitunnistuse number."
@@ -137,10 +147,10 @@ Description: "MPI Patient verified during reception."
 * identifier[internal] ^short = "Asutuse sisene patsiendi identifikaator"
 * identifier[internal].system 1..1 MS
 * identifier[internal].system from PatientIdentityPRN (extensible)
-//* identifier[internal].system = PIDORGINT 
 * identifier[internal].system ^short = "Süsteemiväärtus peab algama urn-iga 'urn:pin:hl7.ee:pid:prn:' ja lõppema koodi väljastava organisatsiooni registrikoodiga."
 * identifier[internal].value 1..1 MS
 * identifier[internal].value ^short = "Sisemine identifikaator peab olema unikaalne asutuse sees. Identifikaator ei pea kandma mingit semantilist tähendust."
+*/
 
 /*
 * identifier contains other 0..1 MS
@@ -186,8 +196,8 @@ Usage: #example
 // * type = IdentityTypeCS#U
   * system = "urn:pin:hl7.ee:pid:u"
   * value = "90006399:xyz:123e4567-e89b-12d3-a456-426614174000"
-* name[0]
-  * use = #official
+* name[official]
+//  * use = #official
   * given = "Igor"
   * family = "Bossenko"
 * gender = #male
@@ -210,8 +220,8 @@ Usage: #example
   * system = "urn:pin:hl7.ee:pid:dl:usa"
   * value = "857623628"
 * active = true
-* name[0]
-  * use = #official
+* name[official]
+//  * use = #official
   * given = "John"
   * family = "Doe"
 * gender = #male

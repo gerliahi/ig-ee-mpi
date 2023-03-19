@@ -18,7 +18,7 @@ Description: "Patsient ja tema kontakt- ja seotud isikud."
 * address MS
 * address ^short = "Kontaktisiku aadress."
 * identifier 0..* MS
-* identifier.system from PatientIdentityVS (required)
+* identifier.system from PatientIdentity (required)
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
 * identifier obeys mpi-id-01

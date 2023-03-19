@@ -15,17 +15,16 @@ Description: "For use in ED, ambulance, for anonymous patients and environmental
 * name.given ..0
 * name.prefix ..0
 * name.suffix ..0
-//* identifier.system from PatientIdentityUnknown (required)
-* identifier.system from PatientIdentityVS (required)
+* identifier.system from PatientIdentityUnknown (required)
 * identifier ^short = "Tundmatu identifikaator"
 * telecom ..0
-* birthDate ^short = "Patsiendi liigikaudne vanus"
 * birthDate.extension ^slicing.discriminator.type = #value
 * birthDate.extension ^slicing.discriminator.path = "url"
 * birthDate.extension ^slicing.rules = #open
 * birthDate.extension ^min = 0
-* birthDate.extension contains ExtensionEEMPIPatientAge named age 0..1 MS
+* birthDate.extension contains ExtensionEEMPIPatientAge named age 0..1 MS and DateAccuracyIndicator named accuracyIndicator 0..1 MS
 * birthDate.extension[age] ^isModifier = false
+* birthDate.extension[age] ^short = "Patsiendi liigikaudne vanus"
 * address ^short = "Leiukoht"
 * address only EEMpiEstonianAddress
 * address.use = #temp (exactly)
@@ -52,10 +51,10 @@ Usage: #example
   * text = "Malle Maasikas"
 * gender = #male
 * birthDate = "1973-02-10"
+  * extension[accuracyIndicator].valueCoding = DateAccuracyIndicator#AAA "Day, month and year are accurate"
 * address
   * use = #temp
   * country = "EE"
   * text = "Valukoja 10, Tallinn"
   * extension[ads].valueCoding.code = #2280361
-
 
