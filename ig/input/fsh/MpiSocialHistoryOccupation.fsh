@@ -1,3 +1,5 @@
+Alias: $EmploymentStatus = http://terminology.hl7.org/ValueSet/v2-0066
+
 ValueSet: Occupation
 Id: occupation
 Title:     "Occupation"
@@ -56,7 +58,7 @@ Description:    "Töötamine"
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
-* component contains job 1..1 MS and type 0..1 MS
+* component contains job 1..1 MS and type 0..1 MS and status 0..1 MS
 * component[job].code = SCT#160922003 "Job details"
 * component[job].value[x] only CodeableConcept
 * component[job].valueCodeableConcept from Occupation
@@ -65,6 +67,11 @@ Description:    "Töötamine"
 * component[type].value[x] only CodeableConcept
 * component[type].valueCodeableConcept from JobType
 * component[type].valueCodeableConcept ^short = "Töötamise liik."
+* component[status].code = SCT#224362002 "Employment status"
+* component[status].value[x] only CodeableConcept
+* component[status].valueCodeableConcept from $EmploymentStatus
+* component[status].valueCodeableConcept ^short = "Tööhõive staatus."
+
 
 
 Instance: Occupation
