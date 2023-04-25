@@ -11,7 +11,7 @@ Title: "EEBase ADS extension"
 * . ^definition = "Aadressiandmete süsteem (ADS) koosneb aadressiandmete süsteemi infosüsteemist ning erinevatest nõuetest. ADS-i eesmärk on tagada ühene aadressiandmete kogumine, registreerimine, töötlemine, säilitamine, identifitseerimine ning töötlemise funktsioonide ühetaoline korraldamine."
 * value[x] only Coding
 * value[x].system 1..
-* value[x].system = "https://hl7.ee/fhir/NamingSystem/ads-id" (exactly)
+* value[x].system = "https://fhir.ee/NamingSystem/ads-id" (exactly)
 * value[x].system ^short = "Reference to ADR-ID (identifier of address object and its version)"
 * value[x].system ^definition = "https://geoportaal.maaamet.ee/est/Ruumiandmed/Aadressiandmed-p112.html"
 * value[x].code 1..

@@ -121,7 +121,7 @@ CodeSystem: DateAccuracyIndicator
 Id:         date-accuracy-indicator
 Title:     "Date Accuracy Indicator"
 Description: "Date Accuracy Indicator. Check full list here https://www.healthterminologies.gov.au/integration/R4/fhir/CodeSystem/date-accuracy-indicator-1."
-* ^url =  http://tehik.ee/mpi/CodeSystem/date-accuracy-indicator
+* ^url =  http://fhir.ee/CodeSystem/date-accuracy-indicator
 * #AAA "DMY" "Day, month and year are accurate"
 * #AAU "DM" "Day and month are accurate, year is unknown"
 * #UAA "MY" "Day is unknown, month and year are accurate"

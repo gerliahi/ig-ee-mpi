@@ -4,13 +4,13 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: mpi
-canonical: https://tehik.ee
+canonical: https://fhir.ee
 name: MPI
 title: Master Patient Index
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.1.0
-fhirVersion: 5.0.0 #5.0.0-snapshot3 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+version: 0.2.0
+fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -51,6 +51,8 @@ pages:
     title: Patsiendid  
   identifiers.md:
     title: Identifikaatorid  
+  link.md:
+    title: Patsientide sidumine ja lahti sidumine
 
 #   implementation.xml:
 #   examples.xml:
@@ -83,6 +85,7 @@ menu:
   Juhendid: 
     Patsiendid: patient.html
     Identifikaatorid: identifiers.html
+    Patsientide sidumine ja lahti sidumine: link.html
   Artefaktid: artifacts.html
   Sisukord: toc.html
   Muu:
