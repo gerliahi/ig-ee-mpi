@@ -51,6 +51,8 @@ pages:
     title: Patsiendid  
   identifiers.md:
     title: Identifikaatorid  
+  dev.md:
+    title: Juhend arendajale
   link.md:
     title: Patsientide sidumine ja lahti sidumine
 
@@ -86,6 +88,7 @@ menu:
     Patsiendid: patient.html
     Identifikaatorid: identifiers.html
     Patsientide sidumine ja lahti sidumine: link.html
+    Juhend arendajale: dev.html
   Artefaktid: artifacts.html
   Sisukord: toc.html
   Muu:
