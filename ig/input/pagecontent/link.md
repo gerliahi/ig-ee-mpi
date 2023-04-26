@@ -56,11 +56,15 @@ POST [mpi]/Patient/$link
   "parameter": [
     {
       "name": "source-patient",
-      "reference": "Patient/123"
+      "valueReference": {
+          "reference": "Patient/123"
+      }      
     },
     {
       "name": "destination-patient",
-      "reference": "Patient/789"
+      "valueReference": {
+          "reference": "Patient/789"
+      }
     }
   ]
 }
@@ -152,11 +156,15 @@ POST [mpi]/Patient/$unlink
   "parameter": [
     {
       "name": "source-patient",
-      "reference": "Patient/123"
+      "valueReference": {
+          "reference": "Patient/123"
+      }      
     },
     {
       "name": "destination-patient",
-      "reference": "Patient/789"
+      "valueReference": {
+          "reference": "Patient/789"
+      }      
     }
   ]
 }

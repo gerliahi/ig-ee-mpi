@@ -55,6 +55,8 @@ pages:
     title: Juhend arendajale
   link.md:
     title: Patsientide sidumine ja lahti sidumine
+  errors.md:
+    title: Veakoodid
 
 #   implementation.xml:
 #   examples.xml:

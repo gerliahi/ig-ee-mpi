@@ -118,7 +118,22 @@ Vastusena tuleb (collection) Bundle mis tagastab kollektsiooni leitud ressurssid
 }                    
 ```
 
+#### Ajalugu
+Iga FHIR ressurssi muutmine loob uut ressurssi versiooni. Varasemate versioonide nimekirja saamiseks kasuta päringu:
+```
+GET {MPI}/Patient/1/_history
+```
+Ning ühte kindla versiooni saad päringuga
+```
+GET {MPI}/Patient/1/_history/2
+```
+, kus 2 on versiooni number.
 
+#### Muudatuste ajalugu
+MPI pakub võimalust pärida nimekirja muudatud patsientidest alates kindlast ajahetkest
+```
+GET {MPI}/Patient/_history?_since=2023-03-31&_count=10
+```
 
 ### Andmete muutmine
 #### Üldised nõuded
@@ -146,11 +161,13 @@ Päringus tuleb määrata mitu tunnust REST päringu päises (Header-is):
 - valiidset sõnumi tuleb edastada päringu kehas.
 
 #### Vastus (response)
-Eduka vastuse korral FHIR server tagastab HTTP koodi 20X. Loogilise vea puhul vastatakse koodiga 40x veaga. Juhul kui teenus ei ole kättesaadav tuleb 50X viga. Näiteks uue patsiendi loomisel tagastakse HTTP-kood = "201 Created".
+Eduka vastuse korral FHIR server tagastab HTTP koodi 20X. Näiteks uue patsiendi loomisel tagastakse HTTP-kood = "201 Created".
 Vastuse päis "Location" sisaldab lingi loodud ressursile.
 ```
 Location:	https://tis.dev.tehik.ee/mpi/fhir/Patient/3
 ```
 Vaikimisi loodud ressursi kehat ei tagastata. Vajadusel saate muuta vaikekäitumist määrates päiset "[Prefer](http://hl7.org/fhir/http.html#ops)".
+Loogilise vea puhul vastatakse koodiga 40x veaga. Juhul kui teenus ei ole kättesaadav tuleb 50X viga. 
+Vead tagastatakse [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) vormingus. Väli "code" tüüpiliselt sisaldab ühte loogilistest [koodidest](errors.html).
 
 
