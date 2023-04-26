@@ -7,8 +7,8 @@ Patsiendi Register kasutab standardi [FHIR](http://fhir.hl7.org) interaktsioonip
 Patsiendi Registri juurutusjuhend määratleb toetatud profiilide komplekti ja pakub iga profiili jaoks vähemalt ühe näite.
 FHIR profiili saab iseloomustada kui ühe fakti sisustusreeglistiku ning juurutusjuhendi kui kogumi sisustusreeglitest ja loenditest.
 
-Patsiendi identifikaatorite käsitlust kirjeldab [Identifikaatorid] (identifiers.html).
-Patsiendi liike kirjeldab [patsiendi andmete koosseis] (patient.html).
+Patsiendi identifikaatorite käsitlust kirjeldab [Identifikaatorid](identifiers.html).
+Patsiendi liike kirjeldab [patsiendi andmete koosseis](patient.html).
 
 
 ### Arendusvahendid ja lähtekood
