@@ -1,4 +1,5 @@
 Antud juhend selgitab põhireeglid patsiendi andmete pärimiseks ja sõnumite koostamiseks. 
+Testimiseks laadige alla Postman [kollektsiooni](images/MPI_FHIR_examples.postman_collection.json) näidetega 
 
 ### Andmete pärimine
 Patsiendi andmete pärimiseks saab esitada REST päringu mis tagastab kas üksiku ressurssi või ressursside kollektsiooni (edaspidi *Bundle*).
@@ -118,7 +119,7 @@ Vastusena tuleb (collection) Bundle mis tagastab kollektsiooni leitud ressurssid
 }                    
 ```
 
-#### Ajalugu
+#### Ressurssi ajalugu
 Iga FHIR ressurssi muutmine loob uut ressurssi versiooni. Varasemate versioonide nimekirja saamiseks kasuta päringu:
 ```
 GET {MPI}/Patient/1/_history
@@ -158,7 +159,7 @@ Patsiendi loomisel/muutmisel tuleb saata päringu FHIR-i endpointile, näiteks a
 Päringus tuleb määrata mitu tunnust REST päringu päises (Header-is):
 - andmetüübi määramiseks ("Content-Type" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
 - autentimisluba ("Authorization")
-- valiidset sõnumi tuleb edastada päringu kehas.
+- valiidset sõnumi tuleb edastada päringu kehas. Andmekoosseisu saab leida lehel [Patsiendid](patient.html).
 
 #### Vastus (response)
 Eduka vastuse korral FHIR server tagastab HTTP koodi 20X. Näiteks uue patsiendi loomisel tagastakse HTTP-kood = "201 Created".
