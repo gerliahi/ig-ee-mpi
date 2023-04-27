@@ -205,7 +205,6 @@ Usage: #example
 * address[ee]
   * use = #work
   * postalCode = "14215"
-  * country = "EE"
   * text = "Valukoja 10, Tallinn"
   * extension[ads].valueCoding.code = #2280361
 

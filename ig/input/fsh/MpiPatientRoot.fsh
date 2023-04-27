@@ -8,7 +8,7 @@ CodeSystem: PatientIdentityCS
 Id:         patient-identity
 Title:     "Patient identity code system"
 Description: "Patient identity code system"
-* ^url =  http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity
+* ^url =  https://fhir.ee/CodeSystem/patient-identity
 * #urn:pin:hl7.ee:pid:ni
     "Patient national identifier"
     "Patsiendi riiklik identifikaator"
@@ -69,45 +69,45 @@ Id: patient-identity-unknown
 Title: "List of supported system for unknow patients"
 Description: "List of supported system for unknow patients"
 * PatientIdentityCS#https://mpi.tehik.ee 
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:prn 
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:prn 
 
 ValueSet: PatientIdentityNI
 Id: patient-identity-ni
 Title: "List of supported national identifiers"
 Description: "List of supported national identifiers"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:ni 
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:ni 
 
 ValueSet: PatientIdentityPPN
 Id: patient-identity-ppn
 Title: "List of supported passport types"
 Description: "List of supported passport types"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:ppn 
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:ppn 
 
 ValueSet: PatientIdentityBCT
 Id: patient-identity-bct
 Title: "List of supported birth certificates"
 Description: "List of supported birth certificates"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:bct
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:bct
 
 ValueSet: PatientIdentityCZ
 Id: patient-identity-cz
 Title: "List of supported ID-cards"
 Description: "List of supported ID-cards"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:cz
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:cz
 
 ValueSet: PatientIdentityPRN
 Id: patient-identity-prn
 Title: "List of healthcare facilities' supported identifiers"
 Description: "List of identifiers supported by healthcare facilities"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:prn
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:prn
 
 ValueSet: PatientIdentityNewborn
 Id: patient-identity-newborn
 Title: "List of supported identification systems for newborn"
 Description: "List of supported identification systems for newborn"
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:ni
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:bct
-* include codes from system http://tis.tehik.ee/terminology/fhir/CodeSystem/patient-identity where concept descendent-of #urn:pin:hl7.ee:pid:prn
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:ni
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:bct
+* include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:prn
 
 ValueSet: PatientIdentityStillborn
 Id: patient-identity-stillborn
@@ -121,7 +121,7 @@ CodeSystem: DateAccuracyIndicator
 Id:         date-accuracy-indicator
 Title:     "Date Accuracy Indicator"
 Description: "Date Accuracy Indicator. Check full list here https://www.healthterminologies.gov.au/integration/R4/fhir/CodeSystem/date-accuracy-indicator-1."
-* ^url =  http://fhir.ee/CodeSystem/date-accuracy-indicator
+* ^url =  https://fhir.ee/CodeSystem/date-accuracy-indicator
 * #AAA "DMY" "Day, month and year are accurate"
 * #AAU "DM" "Day and month are accurate, year is unknown"
 * #UAA "MY" "Day is unknown, month and year are accurate"

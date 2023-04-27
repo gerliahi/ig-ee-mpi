@@ -45,8 +45,8 @@ Usage: #example
 * id = "relpat12"
 * patient = Reference(Patient/pat1)
 * name.text = "Wife of Igor"
-* relationship[0] = v3-RoleCode#WIFE "Abikaasa"
-* relationship[+] = v2-0131#C "Kontakisik"
+* relationship[0] = v3-RoleCode#WIFE "Wife"
+* relationship[+] = v2-0131#C "Emergency Contact"
 * active = true
 * period.start = "1995-06-22"
 

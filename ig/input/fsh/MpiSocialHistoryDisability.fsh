@@ -1,4 +1,5 @@
-CodeSystem: DisabilityLevel
+
+CodeSystem: DisabilityLevelCS
 Id:         disability-level
 Title:     "Disability level"
 Description: "Puude raskusaste"
@@ -16,7 +17,7 @@ ValueSet: DisabilityLevel
 Id: disability-level
 Title:     "Disability level"
 Description: "Puude raskusaste"
-* include codes from system DisabilityLevel
+* include codes from system DisabilityLevelCS
 * include codes from system SCT where concept descendent-of #21134002 "Disability (finding)"
 
 Profile:        MpiSocialHistoryDisability
@@ -52,4 +53,4 @@ Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"
 * performer = Reference(Organization/Org1)
-* valueCodeableConcept = DisabilityLevel#161044002 "Keskpuue"
+* valueCodeableConcept = DisabilityLevelCS#161044002 "Keskpuue"

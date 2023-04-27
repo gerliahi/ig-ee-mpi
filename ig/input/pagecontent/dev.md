@@ -1,5 +1,5 @@
 Antud juhend selgitab põhireeglid patsiendi andmete pärimiseks ja sõnumite koostamiseks. 
-Testimiseks laadige alla Postman [kollektsiooni](images/MPI_FHIR_examples.postman_collection.json) näidetega 
+Testimiseks laadige alla Postman [kollektsiooni]() näidetega.
 
 ### Andmete pärimine
 Patsiendi andmete pärimiseks saab esitada REST päringu mis tagastab kas üksiku ressurssi või ressursside kollektsiooni (edaspidi *Bundle*).
@@ -97,27 +97,9 @@ Vastusena tuleb (searchset) Bundle mis tagastab metainformatsiooni päringu koht
 #### Otsing identifikaatori järgi
 MPI toetab otsingu [identifikaatori](identifiers.html) järgi.
 
-#### Välismaalaste otsing
-Välismaalaste otsimiseks või patsientide otsimiseks ilma identifikaatorita tuleb kasutada operatsiooni [Patient/$foreigner](OperationDefinition-Patient-foreigner.html). Toetavate parameetrite hulka kuuluvad: identifikaatori väljastanud riik, eesnimi, perekonnanimi, sünnikuupäev, sugu ja kontaktandmed.
-```
-GET {MPI}/Patient/$foreign?family=smith&gender=male
-```
-Vastusena tuleb (collection) Bundle mis tagastab kollektsiooni leitud ressurssidest (ilma metainformatsioonita):
-```json
-{
-    "resourceType": "Bundle",
-    "type": "collection",
-    "entry": [
-        {
-            "resource": {
-                "resourceType": "Patient",
-                "id": "1027",
-                ...
-            }
-        }
-    ]
-}                    
-```
+### Operatsioonid
+Vaata [toetavate operatsioonide](operations.html) nimekirja.
+
 
 #### Ressurssi ajalugu
 Iga FHIR ressurssi muutmine loob uut ressurssi versiooni. Varasemate versioonide nimekirja saamiseks kasuta päringu:
@@ -159,7 +141,9 @@ Patsiendi loomisel/muutmisel tuleb saata päringu FHIR-i endpointile, näiteks a
 Päringus tuleb määrata mitu tunnust REST päringu päises (Header-is):
 - andmetüübi määramiseks ("Content-Type" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
 - autentimisluba ("Authorization")
-- valiidset sõnumi tuleb edastada päringu kehas. Andmekoosseisu saab leida lehel [Patsiendid](patient.html).
+- info päringu teostatava isiku kohta ("x-road-userid")
+- valiidset sõnumi tuleb edastada päringu kehas. Andmekoosseisu saab leida lehel [Patsiendid](patient.html)
+'x-road-userid: EE38912072255'
 
 #### Vastus (response)
 Eduka vastuse korral FHIR server tagastab HTTP koodi 20X. Näiteks uue patsiendi loomisel tagastakse HTTP-kood = "201 Created".

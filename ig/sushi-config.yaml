@@ -57,6 +57,8 @@ pages:
     title: Patsientide sidumine ja lahti sidumine
   errors.md:
     title: Veakoodid
+  operations.md:
+    title: Toetavad operatsioonid
 
 #   implementation.xml:
 #   examples.xml:
@@ -89,8 +91,9 @@ menu:
   Juhendid: 
     Patsiendid: patient.html
     Identifikaatorid: identifiers.html
-    Patsientide sidumine ja lahti sidumine: link.html
     Juhend arendajale: dev.html
+    Patsientide sidumine ja lahti sidumine: link.html
+    Operatsioonid: operations.html
   Artefaktid: artifacts.html
   Sisukord: toc.html
   Muu:
