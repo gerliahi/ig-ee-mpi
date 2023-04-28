@@ -7,5 +7,4 @@
     pm.request.headers.add({key: "X-Author-Role", value: pm.variables.get("AUTHOR_ROLE")});
 - external requests: kak v Horone
     info päringu teostatava isiku kohta ("x-road-userid") - 'x-road-userid: EE38912072255'
-
-    
+ 
