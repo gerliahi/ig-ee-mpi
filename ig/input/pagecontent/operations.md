@@ -53,8 +53,12 @@ Vastusena tuleb (collection) Bundle mis tagastab kollektsiooni leitud ressurssid
 ```
 
 
-### Päring välisallikatest
-Andmed teistest infosüsteemidest päritakse [Patient/$lookup](OperationDefinition-Patient-lookup.html) operatsiooniga. Toetavate parameetrite hulka kuuluvad: identifikaator ja süsteem kust päritakse andmed. Hetkel toetatkse päring Rahvastikuregistrist (system=https://rahvastikuregister.ee).
+### Eesti isikukoodiga patsiendi otsing
+Andmed erinevatest infosüsteemidest saab pärida [Patient/$lookup](OperationDefinition-Patient-lookup.html) operatsiooniga. 
+Toetavate parameetrite hulka kuuluvad: identifikaator ja süsteem kust päritakse andmed. 
+Hetkel toetatkse päring
+- Rahvastikuregistrist (system=https://rahvastikuregister.ee)
+- MPI Patsiendiregistrist (system=https://mpi.tehik.ee)
 ```
 GET {MPI}/Patient/$lookup?identifier=https://rahvastikuregister.ee|52007010062
 ```
@@ -103,6 +107,7 @@ GET {MPI}/Patient/$lookup?identifier=https://rahvastikuregister.ee|52007010062
 ### Sotsiaalsed tunnused
 Sotsiaalsed tunnused päritakse xTee teenuste kaudu ja tagastatakse Observation ressurssidena.
 Tüüpiliselt tagastatav Observation ressurss ei sisalda **"id"** väärtust ja peegeldab hetkeseisu situatsiooni.
+Sotsiaalsete tunnuste operatsioonid alati pärivad andmed allikregistritest (sõltumatu andmete olemasolust vahemälus).
 
 #### Seadusliku eeskostja staatus
 Andmed päritakse [$legal-guardian](OperationDefinition-Patient-legal-guardian.html) operatsiooniga, mis saab ühte parameetri - viidet patsiendile.
@@ -504,4 +509,8 @@ ning saab vastuseks Observationi
     ]
 }
 ```
+
+#### Puude määr
+
+TODO
 

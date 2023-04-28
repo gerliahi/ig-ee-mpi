@@ -62,7 +62,7 @@ Usage: #definition
 * parameter[=].min = 1
 * parameter[=].max = "1"
 * parameter[=].documentation = "The status of the response will be one of:\r\r* 200 OK - If the merge request doesn't expect any issues (although warning may be present) for a preview, or was completed without issues if not a preview\r* 202 Accepted - The merge request has been accepted and does not expect any issues and will continue processing the merge in the background, and you can monitor the Task for completion\r* 400 Bad Request - There are errors in the input parameters that need to corrected\r* 422 Unprocessable Entity - Business rules prevent this merge from completing\r\rThe Parameters resource will include:\r\r* The Input parameters to the operation\r* An OperationOutcome containing errors, warnings, and information messages\r* The resulting merged Patient resource (or a patient reference if the patient is not committed)\r* Optionally a Task resource to track any additional processing that was required."
-* parameter[=].type = #Parameters
+* parameter[=].type = #Patient
 
 
 
@@ -128,7 +128,7 @@ Usage: #definition
 * parameter[=].min = 1
 * parameter[=].max = "1"
 * parameter[=].documentation = "The status of the response will be one of:\r\r* 200 OK - If the merge request doesn't expect any issues (although warning may be present) for a preview, or was completed without issues if not a preview\r* 202 Accepted - The merge request has been accepted and does not expect any issues and will continue processing the merge in the background, and you can monitor the Task for completion\r* 400 Bad Request - There are errors in the input parameters that need to corrected\r* 422 Unprocessable Entity - Business rules prevent this merge from completing\r\rThe Parameters resource will include:\r\r* The Input parameters to the operation\r* An OperationOutcome containing errors, warnings, and information messages\r* The resulting merged Patient resource (or a patient reference if the patient is not committed)\r* Optionally a Task resource to track any additional processing that was required."
-* parameter[=].type = #Parameters
+* parameter[=].type = #Patient
 
 
 
@@ -235,10 +235,10 @@ Usage: #definition
 * parameter[=].type = #Identifier
 * parameter[+].name = #return
 * parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "*"
-* parameter[=].documentation = "Returns Bundle (with type collection) with Patient instances."
-* parameter[=].type = #Patient
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Returns Bundle (with type 'collection') with Patient instances."
+* parameter[=].type = #Bundle
 
 
 
@@ -276,10 +276,10 @@ Usage: #definition
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
 * parameter[+].name = #return
 * parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "*"
-* parameter[=].documentation = "Returns Bundle (with type collection) with Observation instances."
-* parameter[=].type = #Observation
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Returns Bundle (with type 'collection') with Observation instances."
+* parameter[=].type = #Bundle
 
 
 Instance: Patient-power-of-attorney
@@ -316,10 +316,10 @@ Usage: #definition
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
 * parameter[+].name = #return
 * parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "*"
-* parameter[=].documentation = "Returns Bundle (with type collection) with Observation instances."
-* parameter[=].type = #Observation
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Returns Bundle (with type 'collection') with Observation instances."
+* parameter[=].type = #Bundle
 
 
 Instance: Patient-education
@@ -356,9 +356,9 @@ Usage: #definition
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
 * parameter[+].name = #return
 * parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "*"
-* parameter[=].documentation = "Returns Bundle (with type collection) with Observation instances."
-* parameter[=].type = #Observation
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Returns Bundle (with type 'collection') with Observation instances."
+* parameter[=].type = #Bundle
 
 

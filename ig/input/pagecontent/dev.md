@@ -139,17 +139,20 @@ Iga patsiendi lisamisel või muutmisel tuleb määrata vastav profiil.
 #### Request
 Patsiendi loomisel/muutmisel tuleb saata päringu FHIR-i endpointile, näiteks arenduskeskkonnas aadressile: https://tis.dev.tehik.ee/mpi/fhir/Patient. 
 Päringus tuleb määrata mitu tunnust REST päringu päises (Header-is):
-- andmetüübi määramiseks ("Content-Type" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
-- autentimisluba ("Authorization")
-- info päringu teostatava isiku kohta ("x-road-userid")
+- päringu keha vormingu määramiseks (päis "Accept" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
+- vastuse keha vormingu määramiseks (päis "Content-Type" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
+- autoriseerimise (päis "Authorization" mille sisu kirjeldatud lehel [Autoriseerimine](auth.html))
+- unikaalne päringu id (päis "x-road-id"). 
+- selgitab miks antud päring tehtud (päis "x-road-issue"). Kasutatakse Andmejälgijas. Päise edastatakse alampäringutele teiste süsteemidesse.
+- loogilise transaktsiooni tunnus (päis "x-transaction-id" FIXME). Päise edastatakse alampäringutele teiste süsteemidesse.
 - valiidset sõnumi tuleb edastada päringu kehas. Andmekoosseisu saab leida lehel [Patsiendid](patient.html)
-'x-road-userid: EE38912072255'
+
 
 #### Vastus (response)
 Eduka vastuse korral FHIR server tagastab HTTP koodi 20X. Näiteks uue patsiendi loomisel tagastakse HTTP-kood = "201 Created".
 Vastuse päis "Location" sisaldab lingi loodud ressursile.
 ```
-Location:	https://tis.dev.tehik.ee/mpi/fhir/Patient/3
+Location: {MPI}/fhir/Patient/3
 ```
 Vaikimisi loodud ressursi kehat ei tagastata. Vajadusel saate muuta vaikekäitumist määrates päiset "[Prefer](http://hl7.org/fhir/http.html#ops)".
 Loogilise vea puhul vastatakse koodiga 40x veaga. Juhul kui teenus ei ole kättesaadav tuleb 50X viga. 
