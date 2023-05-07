@@ -2,7 +2,7 @@ Alias: MaritalStatusVS = http://hl7.org/fhir/ValueSet/marital-status
 Alias: MaritalStatusCS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 
 Profile:        MpiSocialHistoryMaritalStatus
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-MaritalStatus
 Title:          "EE MPI SocialHistory Marital Status"
 Description:    "Abielu või suhe liik."
@@ -16,9 +16,9 @@ Description:    "Abielu või suhe liik."
 * issued 1.. MS
 * issued ^short = "Ajahetk millal antud fakt fikseeritud"
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 0.. MS
-* performer only Reference(RelatedPerson)
+* performer only Reference(EEBaseRelatedPerson)
 * performer ^short = "Teine isik suhes."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 

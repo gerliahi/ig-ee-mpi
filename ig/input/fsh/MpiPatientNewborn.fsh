@@ -1,32 +1,21 @@
 Profile: EEMPIPatientNewborn
-Parent: Patient
-//Id: EEMPI-Patient-Newborn
+Parent: EEBasePatient
+Id: ee-mpi-patient-newborn
 Title: "EE MPI Patient Newborn"
 Description: "Profiil vastsündinu andmete kirjeldamiseks"
 * ^status = #draft
-* ^publisher = "TEHIK"
+* ^publisher = "HL7 Estonia"
 * active = true (exactly)
-* gender ..1 MS
-* name ..1
-* name.use 1..
-* name.use = #official (exactly)
-* name.family 1..1 MS
-* name.given MS
-* name.given ^short = "Vastsündinu eesnimi võib puududa"
-* identifier.system from PatientIdentityNewborn (required)
+* name contains temp 0..1 MS
+* name 1..1
+* name[temp] ^short = "Ajutine nimi"
+* name[temp].use = #temp (exactly)
+* name[temp].family 1..1 MS
+* name[temp].given 0..1 MS
+* name[temp].given ^short = "Vastsündinu eesnimi võib puududa"
 * identifier ^short = "Vastsündinu identifikaator"
 * telecom ..0
-
-* birthDate 1.. MS
-* birthDate ^short = "Patsiendi sünniaeg"
-* birthDate.extension ^slicing.discriminator.type = #value
-* birthDate.extension ^slicing.discriminator.path = "url"
-* birthDate.extension ^slicing.rules = #open
-* birthDate.extension contains $patient-birthTime named birthTime 0..1
-* birthDate.extension[birthTime] MS
-* birthDate.extension[birthTime].value[x] MS
-
-
+* birthDate 1.. 
 * address ..0
 * maritalStatus ..0
 * multipleBirth[x] 1..1 MS 
@@ -44,12 +33,12 @@ InstanceOf: EEMPIPatientNewborn
 Usage: #example
 * id = "pat-newborn"
 * identifier[0]
-  * system = #urn:pin:hl7.ee:pid:ni:est
+  * system = "https://fhir.ee/sid/pid/est/ni"
   * value = "msvgh378544y"
 * active = true 
 * gender = #male
-* name[0]
-  * use = #official
+* name[temp]
+  * use = #temp
   * family = "Maasikas"
 * gender = #male
 * birthDate = "1973-02-10"

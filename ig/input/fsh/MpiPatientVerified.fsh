@@ -1,11 +1,15 @@
 Profile: EEMPIPatientVerified
-Parent: Patient
+Parent: EEBasePatient
+Id: ee-mpi-patient-verified
 Title: "EE MPI Patient Verified"
 Description: "MPI Patient verified during reception."
 * ^status = #draft
-* ^publisher = "TEHIK"
+* ^publisher = "HL7 Estonia"
 * active = true (exactly)
 * name 1..* MS
+* name[official] 1.. MS
+* name[official] ^short = "Ametlik nimi"
+/*
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "use"
 * name ^slicing.rules = #open
@@ -19,7 +23,8 @@ Description: "MPI Patient verified during reception."
 * name[official].given ^short = "Eesnimi"
 * name[official].prefix 0..1 MS
 * name[official].period MS
-
+*/
+/*
 * address MS
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "country"
@@ -28,7 +33,8 @@ Description: "MPI Patient verified during reception."
 * address contains ee 0..* MS and other 0..* MS
 * address[ee] only EEMpiEstonianAddress
 * address[other] only EEMpiForeignerAddress
-
+*/
+/*
 * telecom MS
 * telecom.value 1..1 MS 
 * telecom.period MS 
@@ -69,6 +75,7 @@ Description: "MPI Patient verified during reception."
 * birthDate MS 
 * gender MS 
 * deceased[x] MS
+*/
 * communication MS 
 
 * maritalStatus ..0
@@ -79,6 +86,7 @@ Description: "MPI Patient verified during reception."
 * link ..0
 * contact ..0
 
+/*
 * identifier 1..* MS
 * identifier.system 1..1 MS
 * identifier.system from PatientIdentity (extensible)
@@ -92,6 +100,7 @@ Description: "MPI Patient verified during reception."
 * identifier.period ^short = "Validity period of the identifier of identification document."
 //* identifier.assigner ^short = "Dokumendi väljastanud organisatsioon. Võib kasutada nii viitena organisatsioonile või vaba tekstina."
 * identifier.assigner ^short = "Organization that issued the document. Can be used as a reference to an organization or as free text."
+*/
 
 /*
 * identifier ^slicing.discriminator.type = #pattern
@@ -163,64 +172,66 @@ Description: "MPI Patient verified during reception."
 * identifier[other].value ^short = "Saatja peab tagama väärtuse unikaalsust (maailmaa piires)."
 */
 
-Instance: PatientIgorBossenko2
+Instance: PatientIgorBossenko
 InstanceOf: EEMPIPatientVerified
-Description: "Välismaalase kodeerimine."
+Description: "Patsient erinevate identifikaatoritega"
 Usage: #example
 * id = "pat1"
 * identifier[0]
-  * system = "urn:pin:hl7.ee:pid:ni:est"
+  * system = "https://fhir.ee/sid/pid/est/ni"
   * value = "37302102711"
 * identifier[+]
-  * system = "urn:pin:hl7.ee:pid:ni:uzb"
+  * system = "https://fhir.ee/sid/pid/est/uzb/ni"
   * value = "31002736540023"
-* identifier[+]
-  * system = "urn:pin:hl7.ee:pid:cz:est"
+/* identifier[+]
+  * system = "https://fhir.ee/sid/pid/est/cz"
   * value = "AB0421183"
   * period.end = "2023-12-28"
   * assigner.display = "Estonian Police and Board Agency"
+*/  
 * identifier[+]
-  * system = "urn:pin:hl7.ee:pid:ppn:est"
+  * system = "https://fhir.ee/sid/pid/est/ppn"
   * value = "K0307337"
   * period.end = "2023-12-28"
   * assigner.display = "Estonian Police and Board Agency"
 * identifier[+]
 //  * type = IdentityTypeCS#MR
-  * system = "https://mpi.tehik.ee"
+  * system = "https://fhir.ee/sid/pid/est/mr"
   * value = "82746127612"
 * identifier[+]
 //  * type = IdentityTypeCS#PRN
-  * system = "urn:pin:hl7.ee:pid:prn:90006399"
+  * system = "https://fhir.ee/sid/pid/est/prn/90006399"
   * value = "123e4567-e89b-12d3-a456-426614174000"
-* identifier[+]
+/* identifier[+]
 // * type = IdentityTypeCS#U
   * system = "urn:pin:hl7.ee:pid:u"
   * value = "90006399:xyz:123e4567-e89b-12d3-a456-426614174000"
+*/  
 * name[official]
 //  * use = #official
   * given = "Igor"
   * family = "Bossenko"
 * gender = #male
 * birthDate = "1973-02-10"
-* address[ee]
+* address[0]
   * use = #work
+  * country = "EE"
   * postalCode = "14215"
   * text = "Valukoja 10, Tallinn"
   * extension[ads].valueCoding.code = #2280361
 
 
 Instance: PatientJohnDoe
-InstanceOf: EEMPIPatientVerified
-Description: "Patsient minimaalse andmekoosseisuga."
+InstanceOf: EEBasePatient
+Description: "Foreigner with minimal dataset."
 Usage: #example
 * id = "pat2"
 * identifier[0]
-  * type = IdentityTypeCS#DL
-  * system = "urn:pin:hl7.ee:pid:dl:usa"
-  * value = "857623628"
+  * system = "https://fhir.ee/sid/pid/usa/ppn"
+  * value = "N857623628"
 * active = true
-* name[official]
-//  * use = #official
+* name[0]
+  * use = #usual
   * given = "John"
   * family = "Doe"
 * gender = #male

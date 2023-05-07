@@ -14,7 +14,7 @@ Description: "Töötamise liik"
 * include codes from system SCT where concept descendent-of #365539008 "Finding of type of job (should be replaced)"
 
 Profile:        MpiSocialHistoryOccupation
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-Occupation
 Title:          "EE MPI SocialHistory Occupation"
 Description:    "Töötamine"
@@ -41,9 +41,9 @@ Description:    "Töötamine"
 * effective[x] 1..1 MS
 * effective[x] only Period
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 0..1 MS
-* performer only Reference(Organization)
+* performer only Reference(EEBaseOrganization)
 * performer ^short = "Tööandja asutus."
 * value[x] ..0
 * basedOn ..0

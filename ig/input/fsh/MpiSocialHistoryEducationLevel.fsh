@@ -6,7 +6,7 @@ Description: "Haridustasemed"
 
 
 Profile:        MpiSocialHistoryEducationLevel
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-EducationLevel
 Title:          "EE MPI SocialHistory Education Level"
 Description:    "Haridusetase"
@@ -20,7 +20,7 @@ Description:    "Haridusetase"
 * issued 1.. MS
 * issued ^short = "Ajahetk millal antud haridustase fikseeritud"
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 0..0 MS
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 

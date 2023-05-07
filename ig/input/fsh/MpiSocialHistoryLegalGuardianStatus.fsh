@@ -20,7 +20,7 @@ Description: "Eeskostja liik"
 
 
 Profile:        MpiSocialHistoryLegalGuardianStatus
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-LegalGuardianStatus
 Title:          "EE MPI SocialHistory Legal Guardian Status"
 Description:    "Seadusliku eeskostja staatus"
@@ -30,9 +30,9 @@ Description:    "Seadusliku eeskostja staatus"
 * effective[x] 1..1 MS
 * effective[x] only Period
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 1.. MS
-* performer only Reference(Organization or PractitionerRole or RelatedPerson)
+* performer only Reference(EEBaseOrganization or EEBasePractitionerRole or EEBaseRelatedPerson)
 * performer ^short = "Asutus ja/või isikud kellel on eeskoste õigus."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 

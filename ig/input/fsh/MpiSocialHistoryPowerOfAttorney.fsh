@@ -20,7 +20,7 @@ Description: "Hooldusõiguse liik"
 
 
 Profile:        MpiSocialHistoryPowerOfAttorney
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-PowerOfAttorney
 Title:          "EE MPI SocialHistory Power Of Attorney"
 Description:    "Hooldusõigus"
@@ -30,9 +30,9 @@ Description:    "Hooldusõigus"
 * effective[x] 1..1 MS
 * effective[x] only Period
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 1.. MS 
-* performer only Reference(RelatedPerson)
+* performer only Reference(EEBaseRelatedPerson)
 * performer ^short = "Isik(ud) kellel on hooldusõigus."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 

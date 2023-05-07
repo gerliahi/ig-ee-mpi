@@ -26,6 +26,10 @@ publisher:
 #
 dependencies:
   hl7.fhir.uv.extensions: current
+#  hl7.fhir.ee.base: dev   # local build
+  hl7.fhir.ee.base: current  # latest EEBase buid at https://build.fhir.org/ig/HL7EE/ig-ee-base
+
+
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode

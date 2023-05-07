@@ -1,9 +1,9 @@
 //Alias: $address-identifier = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID
-Alias: $patient-birthTime = http://hl7.org/fhir/StructureDefinition/patient-birthTime
+//Alias: $patient-birthTime = http://hl7.org/fhir/StructureDefinition/patient-birthTime
 
 
 /* Terminology */
-
+/*
 CodeSystem: PatientIdentityCS
 Id:         patient-identity
 Title:     "Patient identity code system"
@@ -115,10 +115,11 @@ Title: "List of supported identification systems for stillborn"
 Description: "List of supported identification systems for stillborn"
 * include codes from system PatientIdentityCS where concept descendent-of #urn:pin:hl7.ee:pid:prn
 * PatientIdentityCS#https://mpi.tehik.ee
+*/
 
-
+/*
 CodeSystem: DateAccuracyIndicator
-Id:         date-accuracy-indicator
+Id:         ee-date-accuracy-indicator
 Title:     "Date Accuracy Indicator"
 Description: "Date Accuracy Indicator. Check full list here https://www.healthterminologies.gov.au/integration/R4/fhir/CodeSystem/date-accuracy-indicator-1."
 * ^url =  https://fhir.ee/CodeSystem/date-accuracy-indicator
@@ -133,6 +134,7 @@ Id: date-accuracy-indicator
 Title: "Date Accuracy Indicator"
 Description: "Date Accuracy Indicator"
 * include codes from system DateAccuracyIndicator 
+*/
 
 /* Invariants */
 Invariant:  mpi-id-01
@@ -141,6 +143,7 @@ Expression: "system != 'urn:pin:hl7.ee:pid:ni' and system != 'urn:pin:hl7.ee:pid
 Severity:   #error
 
 /* Extensions */
+/*
 Extension: ExtensionEEMPIPatientAge
 Id: Extension-EEMPI-PatientAge
 Title: "Extension EEMPI PatientAge"
@@ -157,19 +160,13 @@ Description: "Patient age measure and unit"
 * value[x].value ^maxValueDecimal = 999
 * value[x].unit 1..
 * value[x].code 1..
+*/
 
+/*
 Extension: DateAccuracyIndicator
 Id: date-accuracy-indicator
 Title: "Date Accuracy Indicator"
 Description: "This extension applies to the [date](http://hl7.org/fhir/R4/datatypes.html#date) and [dateTime](http://hl7.org/fhir/R4/datatypes.html#dateTime) data types and is used to represent the accuracy of the associated date."
-/*
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-* ^extension[=].valueInteger = 2
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
-* ^extension[=]._valueCode.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"
-* ^extension[=]._valueCode.extension.valueCanonical = "http://hl7.org.au/fhir/ImplementationGuide/hl7.fhir.au.base"
-*/
 * ^version = "5.0.0"
 * ^publisher = "HL7 Estonia"
 * ^jurisdiction = urn:iso:std:iso:3166#EE
@@ -187,7 +184,7 @@ Description: "This extension applies to the [date](http://hl7.org/fhir/R4/dataty
 * value[x] ^short = "Date accuracy coding"
 * value[x] ^definition = "Coding of the accuracy of a date."
 * value[x] ^binding.description = "Date accuracy coding"
-
+*/
 
 Profile: EEMpiEstonianAddress
 Parent: Address
@@ -233,10 +230,7 @@ Description: "Non Estonian aadress"
 Severity: #error
 Expression: "country != 'EE'"
 
-Invariant: inv-add-3
-Description: "Postal code shall be 5 digits"
-Severity: #error
-Expression: "matches('^[0-9]{5}$')"
+
 
 /*
 

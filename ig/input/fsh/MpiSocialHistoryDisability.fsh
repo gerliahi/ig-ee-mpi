@@ -22,7 +22,7 @@ Description: "Puude raskusaste"
 * ^compose.include.concept[=].designation[=].value = "Raske puue"
 
 Profile:        MpiSocialHistoryDisability
-Parent:         Observation
+Parent:         EEBaseObservation
 Id:             EEMPI-SocialHistory-Disability
 Title:          "EE MPI SocialHistory Disability"
 Description:    "Puue määr"
@@ -32,9 +32,9 @@ Description:    "Puue määr"
 * effective[x] 1..1 MS
 * effective[x] only Period
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(EEBasePatient)
 * performer 0..1 MS
-* performer only Reference(Organization or PractitionerRole)
+* performer only Reference(EEBaseOrganization or EEBasePractitionerRole)
 * performer ^short = "Asutus ja/või isik kes määras puue."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
