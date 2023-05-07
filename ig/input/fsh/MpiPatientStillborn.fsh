@@ -65,7 +65,8 @@ Usage: #example
 * id = "pat-stillborn"
 * identifier[0]
 //  * system = "urn:pin:hl7.ee:pid:prn:90006399"
-  * system = "https://fhir.ee/sid/pid/est/npi"
+//  * system = "https://fhir.ee/sid/pid/est/npi"
+  * system = "https://fhir.ee/sid/pid/est/ni"
   * value = "msvgh378544y"
 * active = false 
 * gender = #male

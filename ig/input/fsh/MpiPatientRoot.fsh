@@ -186,6 +186,7 @@ Description: "This extension applies to the [date](http://hl7.org/fhir/R4/dataty
 * value[x] ^binding.description = "Date accuracy coding"
 */
 
+/*
 Profile: EEMpiEstonianAddress
 Parent: Address
 Id: address-ee
@@ -223,7 +224,7 @@ Description: "This profile defines an address structure for non Estonian patient
 * country from CountryVS
 * country ^short = "Should use non 'EE' a 2 digit ISO 3166 code"
 * obeys inv-add-0
-
+*/
 
 Invariant: inv-add-0
 Description: "Non Estonian aadress"

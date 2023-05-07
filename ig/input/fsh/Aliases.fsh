@@ -18,7 +18,7 @@ Alias: CountryVS = http://hl7.org/fhir/ValueSet/iso3166-1-2
 //Common extensions
 Alias: $Extension-EEBase-ADS = https://hl7.ee/fhir/StructureDefinition/Extension-EEBase-ADS
 
-
+/*
 //Naming systems
 Instance: pid-ni-est
 InstanceOf: NamingSystem
@@ -44,3 +44,4 @@ Usage: #definition
   * type = #oid
   * value = "urn:oid:1.3.6.1.4.1.28284.6.2.2.1"
   * preferred = false
+*/

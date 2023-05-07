@@ -18,12 +18,12 @@ Järgmine sektsioon sisaldab andmed minimaalse andmekoosseisuga:
     "id": "1",
     "meta": {
         "profile": [
-            "https://hl7.ee/fhir/StructureDefinition/EEMPI-Patient-Verified"
+            "https://hl7.ee/fhir/StructureDefinition/ee-mpi-patient-verified"
         ]
     },
     "identifier": [
         {
-            "system": "urn:pin:hl7.ee:pid:est:ni",
+            "system": "https://fhir.ee/sid/pid/est/ni",
             "value": "37412251234"
         }
     ],
@@ -45,11 +45,11 @@ Järgmine sektsioon sisaldab andmed minimaalse andmekoosseisuga:
 #### Otsing
 Patsiendi otsingu tulemusena tagastatakse [Bundle](https://www.hl7.org/fhir/bundle.html) (või teiste sõnadega "ümbrik"), mis võib sisaldada mitu ressurssi (0..n). Järgnevas näites teostatakse otsing Eesti isikukoodi _37412251234_ järgi:
 ```
-GET {MPI}/Patient?identifier=urn:pin:hl7.ee:pid:est:ni|37412251234
+GET {MPI}/Patient?identifier=https://fhir.ee/sid/pid/est/ni|37412251234
 ```
 Enne saatmist kõik erisümbolid peavad olema encode-itud:
 ```
-GET {MPI}/Patient?identifier=urn%253Apin%253Ahl7.ee%253Apid%253Ani%253Aest%257C37412251234
+GET {MPI}/Patient?identifier=https%3A%2F%2Ffhir.ee%2Fsid%2Fpid%2Fest%2Fni%7C37412251234
 ```
 Vastusena tuleb (searchset) Bundle mis tagastab metainformatsiooni päringu kohta ja kollektsiooni kahest ressurssist (kust eemaldatud patsiendi ressurssi sisuline osa):
 ```json
@@ -60,15 +60,15 @@ Vastusena tuleb (searchset) Bundle mis tagastab metainformatsiooni päringu koht
     "link": [
         {
             "relation": "self",
-            "url": "{MPI}/Patient?identifier=urn%3Apin%3Ahl7.ee%3Apid%3Ani%3Aest%7C37412251234&_page=1"
+            "url": "{MPI}/Patient?identifier=https%3A%2F%2Ffhir.ee%2Fsid%2Fpid%2Fest%2Fni%7C37412251234&_page=1"
         },
         {
             "relation": "first",
-            "url": "{MPI}/Patient?identifier=urn%3Apin%3Ahl7.ee%3Apid%3Ani%3Aest%7C37412251234&_page=1"
+            "url": "{MPI}/Patient?identifier=https%3A%2F%2Ffhir.ee%2Fsid%2Fpid%2Fest%2Fni%7C37412251234&_page=1"
         },
         {
             "relation": "last",
-            "url": "{MPI}/Patient?identifier=urn%3Apin%3Ahl7.ee%3Apid%3Ani%3Aest%7C37412251234&_page=1"
+            "url": "{MPI}/Patient?identifier=https%3A%2F%2Ffhir.ee%2Fsid%2Fpid%2Fest%2Fni%7C37412251234&_page=1"
         }
     ],
     "entry": [
@@ -126,14 +126,14 @@ Uue kirje loomisel saab anda kaasa oma infosüsteemi sisemise identifikaatori (�
   "resourceType": "Patient",
   "meta": {
     "profile": [
-      "https://fhir.ee/StructureDefinition/EEMPI-Patient-Verified"
+      "https://fhir.ee/StructureDefinition/ee-mpi-patient-verified"
     ],
     "source": "https://my.his.ee/Patient/92837-fdsvsd-3f4gfew-2342dwd" 
   },
   "id": "1"
 ```
 
-Profiil on reeglite kogum, mis seotud kindla kasutusjuhuga. MPI toetab [tuvastatud](StructureDefinition-EEMPIPatientVerified.html) ja [tundmatu](StructureDefinition-EEMPIPatientUnknown.html) patsientide rregistreerimist. Tulevikus võivad lisanduda [vastsündinu-](StructureDefinition-EEMPIPatientNewborn.html), [surnultsündinu-](StructureDefinition-EEMPIPatientStillborn.html) ja [mitte inimpatsientide]() registreerimine.
+Profiil on reeglite kogum, mis seotud kindla kasutusjuhuga. MPI toetab [tuvastatud](StructureDefinition-ee-mpi-patient-verified.html) ja [tundmatu](StructureDefinition-ee-mpi-patient-unknown.html) patsientide rregistreerimist. Tulevikus võivad lisanduda [vastsündinu-](StructureDefinition-ee-mpi-patient-newborn.html), [surnultsündinu-](StructureDefinition-ee-mpi-patient-stillborn.html) ja [mitte inimpatsientide]() registreerimine.
 Iga patsiendi lisamisel või muutmisel tuleb määrata vastav profiil.
 
 #### Request

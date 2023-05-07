@@ -2,7 +2,9 @@ ValueSet: EEMPIPatientIdentityUnknown
 Id: ee-patient-identity-unknown
 Title: "Unknown Patient Identity Systems"
 Description: "Identity system acceptable for unknown patient identification"
-* ^experimental = true
+* ^experimental = false
+//* ^compose.include.system = EEBaseIdentitySystem
+//* ^compose.include.concept[+].code = #https://fhir.ee/sid/pid/est/mr
 * EEBaseIdentitySystem#https://fhir.ee/sid/pid/est/mr
 * include codes from system EEBaseIdentitySystem where concept descendent-of "https://fhir.ee/sid/pid/est/prn"
 
