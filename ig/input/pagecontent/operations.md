@@ -1,13 +1,14 @@
 FHIR operatsioon on eritegevus, mida ei ole võimalik või väga raske väljendada standardse FHIR süntaksi kaudu.
 Tegevuse realiseerimine operatsioonina võib tingida teise osapoole (nt xTee andmekogu) halb vastuse aeg päringule, mis vastasel juhul halvaks rakenduse tööd.
 
-Tavaliselt välised allikad kust MPI pärib andmed ei toeta lehekülgede numeratsiooni päringu parameetrina. Selle tõttu enamus MPI operatsioonidest tagastavad andmed "collection" tüübi Bundle-ina, mis ei sisalda informatsiooni ridade arvust ega leheküljetest.
+Tavaliselt välised allikad kust MPI pärib andmed ei toeta lehekülgede numeratsiooni päringu parameetrina. Selle tõttu enamus MPI operatsioonidest tagastavad andmed "collection" tüübi Bundle-ina, mis ei sisalda informatsiooni ridade arvust ega leheküljetest. 
 
-### Patsient
-#### Patsientide sidumine ja lahti sidumine
+
+## Patsient
+### Patsientide sidumine ja lahti sidumine
 Patsientide sidumise ja lahti sidumise loogika ja operatsioonid seletud omaette [leheküljel](link.html).
 
-#### Välismaalaste otsing
+### Välismaalaste otsing
 Välismaalaste otsimiseks või patsientide otsimiseks ilma identifikaatorita tuleb kasutada operatsiooni [Patient/$foreigner](OperationDefinition-Patient-foreigner.html). Toetavate parameetrite hulka kuuluvad: identifikaatori väljastanud riik, eesnimi, perekonnanimi, sünnikuupäev, sugu ja kontaktandmed.
 ```
 GET {MPI}/Patient/$foreign?family=smith&gender=male
@@ -104,12 +105,12 @@ GET {MPI}/Patient/$lookup?identifier=https://rahvastikuregister.ee|52007010062
 }
 ```
 
-### Sotsiaalsed tunnused
+## Sotsiaalsed tunnused
 Sotsiaalsed tunnused päritakse xTee teenuste kaudu ja tagastatakse Observation ressurssidena.
 Tüüpiliselt tagastatav Observation ressurss ei sisalda **"id"** väärtust ja peegeldab hetkeseisu situatsiooni.
 Sotsiaalsete tunnuste operatsioonid alati pärivad andmed allikregistritest (sõltumatu andmete olemasolust vahemälus).
 
-#### Seadusliku eeskostja staatus
+### Seadusliku eeskostja staatus
 Andmed päritakse [$legal-guardian](OperationDefinition-Patient-legal-guardian.html) operatsiooniga, mis saab ühte parameetri - viidet patsiendile.
 ```
 GET {MPI}/Patient/$legal-guardian?patient=Patient/3744
@@ -125,7 +126,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -181,7 +182,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -252,7 +253,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -302,7 +303,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -352,7 +353,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -402,7 +403,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-legal-guardian-status"
                     ]
                 },
                 "status": "final",
@@ -451,7 +452,7 @@ ning saab vastuseks Observationi
 }
 ```
 
-#### Education
+### Education
 Andmed päritakse [$education](OperationDefinition-Patient-education.html) operatsiooniga, mis saab ühte parameetri - viidet patsiendile.
 ```
 GET {MPI}/Patient/$education?patient=Patient/3744
@@ -467,7 +468,7 @@ ning saab vastuseks Observationi
                 "resourceType": "Observation",
                 "meta": {
                     "profile": [
-                        "https://tehik.ee/StructureDefinition/EEMPI-SocialHistory-LegalGuardianStatus"
+                        "https://tehik.ee/StructureDefinition/ee-mpi-social-history-education-level"
                     ]
                 },
                 "status": "final",
@@ -510,7 +511,21 @@ ning saab vastuseks Observationi
 }
 ```
 
-#### Puude määr
+### Puude määr
 
 TODO
 
+
+## Tööprintsiip
+### Cache
+MPI operatsioonid teostavad päringu algallikasse (registri) ning tagastavad vastuse kasutajale ilma andmete salvestamata MPI andmebaasi. Iga välise registri eest vastutab omaette mikroteenus, mis säilitab päringu vastust oma vahemälus konfigureeritud ajaks (tavaliselt ühe päeva jooksul). Korduv operatsiooni väljakutse teeb uue päringu algallikasse ja värskendab andmed vahemälus.
+### Vahemälust pärimine
+Vahemälust andmete pärimiseks tuleb esitada päringu Observation endpointile koos otsitava mõiste koodiga. Näiteks:
+```
+GET {MPI}/Observation?subject=Patient/1&code=http://snomed.info/sct|1193838006 
+```
+tagastab cache-is oleva eeskostja infot.
+Kahest või rohkematest andmeallikatest andmete pärimisel tuleb loendada kõik vastavad mõisted.
+```
+GET {MPI}/Observation?subject=Patient/1&code=http://snomed.info/sct|1193838006&code=http://loinc.org|82589-3
+```

@@ -59,7 +59,7 @@ Usage: #example
   * value = "3456346"
 * active = false
 * name[nickname]
-  //* use = #nickname
+  * use = #nickname
   * text = "Malle Maasikas"
 * gender = #male
 * birthDate = "1973-02-10"

@@ -208,7 +208,7 @@ Usage: #example
   * value = "90006399:xyz:123e4567-e89b-12d3-a456-426614174000"
 */  
 * name[official]
-//  * use = #official
+  * use = #official
   * given = "Igor"
   * family = "Bossenko"
 * gender = #male
