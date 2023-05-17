@@ -15,12 +15,12 @@ Description: "Töötamise liik"
 
 Profile:        MpiSocialHistoryOccupation
 Parent:         EEBaseObservation
-Id:             EEMPI-SocialHistory-Occupation
+Id:             ee-mpi-socialhistory-occupation
 Title:          "EE MPI SocialHistory Occupation"
 Description:    "Töötamine"
 * status = #final (exactly)
-* category 1..1 MS
-* category = OBSCAT#social-history "Social history" (exactly)
+* category[obscat] 1..1 
+* category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code.coding 2..2
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "code"

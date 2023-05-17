@@ -1,9 +1,22 @@
+CodeSystem: DisabilityLevel
+Id: disability-level
+Title:     "Disability level"
+Description: "Puude raskusaste"
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #KESKMINE_PUUE "Keskmine puue"
+* #RASKE_PUUE "Raske puue"
+* #SYGAV_PUUE "sügav puue"
+
+
 ValueSet: DisabilityLevel
 Id: disability-level
 Title:     "Disability level"
 Description: "Puude raskusaste"
-//* include codes from system DisabilityLevelCS
-//* include codes from system SCT where concept descendent-of #21134002 "Disability (finding)"
+* ^experimental = false
+* include codes from system DisabilityLevel
+/*
 * ^compose.include.system = SCT
 
 * ^compose.include.concept[+].code = #161043008
@@ -21,13 +34,21 @@ Description: "Puude raskusaste"
 * ^compose.include.concept[=].designation[+].language = #et
 * ^compose.include.concept[=].designation[=].value = "Raske puue"
 
+* ^compose.include.system = LN
+
+* ^compose.include.concept[+].code = #LL5052-7 
+* ^compose.include.concept[=].display = "Crisis"
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Sügav puue"
+*/
+
 Profile:        MpiSocialHistoryDisability
 Parent:         EEBaseObservation
-Id:             EEMPI-SocialHistory-Disability
+Id:             ee-mpi-socialhistory-disability
 Title:          "EE MPI SocialHistory Disability"
 Description:    "Puue määr"
 * status = #final (exactly)
-* category = OBSCAT#social-history "Social history" (exactly)
+* category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code = LN#95377-8 "Disability type" (exactly)
 * effective[x] 1..1 MS
 * effective[x] only Period
@@ -54,4 +75,4 @@ Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"
 * performer = Reference(Organization/Org1)
-* valueCodeableConcept = SCT#161044002 "Keskpuue"
+* valueCodeableConcept = DisabilityLevel#KESKMINE_PUUE "Keskmine puue"

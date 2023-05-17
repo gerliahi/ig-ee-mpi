@@ -2,15 +2,8 @@ CodeSystem: GuardianStatus
 Id:         guardian-status
 Title:     "Guardian Status"
 Description: "Eeskostja liik"
-* #A
-    "A"
-    ""
-* #B
-    "B"
-    ""
-* #C
-    "C"
-    ""
+* #58626002 "Legal guardian"
+* #365569001 "Finding of wardship"
 
 ValueSet: GuardianStatus
 Id:         guardian-status
@@ -21,11 +14,11 @@ Description: "Eeskostja liik"
 
 Profile:        MpiSocialHistoryLegalGuardianStatus
 Parent:         EEBaseObservation
-Id:             EEMPI-SocialHistory-LegalGuardianStatus
+Id:             ee-mpi-socialhistory-legal-guardian-status
 Title:          "EE MPI SocialHistory Legal Guardian Status"
 Description:    "Seadusliku eeskostja staatus"
 * status = #final (exactly)
-* category = OBSCAT#social-history "Social history" (exactly)
+* category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code = SCT#1193838006 "Legal guardian status" (exactly)
 * effective[x] 1..1 MS
 * effective[x] only Period
@@ -55,4 +48,4 @@ Usage: #example
 * effectivePeriod.start = "2021-11-23"
 * performer[0] = Reference(Organization/Org1)
 * performer[+] = Reference(PatientIgorBossenkoWife)
-* valueCodeableConcept = GuardianStatus#A "A"
+* valueCodeableConcept = GuardianStatus#58626002 "Legal guardian"

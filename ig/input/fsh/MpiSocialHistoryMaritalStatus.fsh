@@ -3,12 +3,11 @@ Alias: MaritalStatusCS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 
 Profile:        MpiSocialHistoryMaritalStatus
 Parent:         EEBaseObservation
-Id:             EEMPI-SocialHistory-MaritalStatus
+Id:             ee-mpi-socialhistory-marital-status
 Title:          "EE MPI SocialHistory Marital Status"
 Description:    "Abielu või suhe liik."
 * status = #final (exactly)
-* category 1..1 MS
-* category = OBSCAT#social-history "Social history" (exactly)
+* category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code = SCT#125680007 "Marital status" (exactly)
 * effective[x] 0..1 MS
 * effective[x] only Period

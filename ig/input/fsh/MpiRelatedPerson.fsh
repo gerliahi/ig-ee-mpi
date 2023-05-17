@@ -32,7 +32,7 @@ Usage: #example
 * id = "relpat11"
 * patient = Reference(Patient/pat1)
 * identifier[0]
-  * system = "urn:pin:hl7.ee:pid:ni:est"
+  * system = "https://fhir.ee/sid/pid/est/ni"
   * value = "39510212711"
 * name.text = "Son of Igor"
 * relationship = v3-RoleCode#SON
