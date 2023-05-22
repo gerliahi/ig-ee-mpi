@@ -1,11 +1,10 @@
 Profile: EEMPIPatientVerified
-Parent: EEBasePatient
+Parent: EEMPIPatient
 Id: ee-mpi-patient-verified
 Title: "EE MPI Patient Verified"
 Description: "MPI Patient verified during reception."
 * ^status = #draft
 * ^publisher = "HL7 Estonia"
-* active = true (exactly)
 * name 1..* MS
 * name[official] 1.. MS
 * name[official] ^short = "Ametlik nimi"
@@ -78,13 +77,6 @@ Description: "MPI Patient verified during reception."
 */
 * communication MS 
 
-* maritalStatus ..0
-* multipleBirth[x] ..0
-* photo ..0
-* generalPractitioner ..0
-* managingOrganization ..0
-* link ..0
-* contact ..0
 
 /*
 * identifier 1..* MS
@@ -177,6 +169,7 @@ InstanceOf: EEMPIPatientVerified
 Description: "Patsient erinevate identifikaatoritega"
 Usage: #example
 * id = "pat1"
+* active = true
 * identifier[0]
   * system = "https://fhir.ee/sid/pid/est/ni"
   * value = "37302102711"

@@ -8,7 +8,7 @@ Description: "Identity system acceptable for stillborn patient identification"
 * include codes from system EEBaseIdentitySystem where concept descendent-of "https://fhir.ee/sid/pid/est/prn"
 
 Profile: EEMPIPatientStillborn
-Parent: EEBasePatient
+Parent: EEMPIPatient
 Id: ee-mpi-patient-stillborn
 Title: "EE MPI Patient Stillborn"
 Description: "Profiil surnultsündinu andmete kirjeldamiseks"
@@ -52,11 +52,6 @@ Description: "Profiil surnultsündinu andmete kirjeldamiseks"
 * multipleBirth[x] 1..1 MS 
 * multipleBirth[x] only integer
 * multipleBirth[x] ^short = "Sünnijärjekord"
-* photo ..0
-* generalPractitioner ..0
-* managingOrganization ..0
-* link ..0
-
 
 
 Instance: PatientStillborn
