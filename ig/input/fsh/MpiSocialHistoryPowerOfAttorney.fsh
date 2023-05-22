@@ -53,6 +53,7 @@ Description:    "Hooldusõigus"
 
 Instance: PowerOfAttorney
 InstanceOf: MpiSocialHistoryPowerOfAttorney
+Description: "Example of patient attorney"
 Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"

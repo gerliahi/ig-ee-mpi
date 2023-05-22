@@ -1,16 +1,19 @@
 Alias: $EmploymentStatus = http://terminology.hl7.org/ValueSet/v2-0066
 
+/*
 ValueSet: Occupation
 Id: occupation
 Title:     "Occupation"
 Description: "Ametite klassifikaator"
 * include codes from system SCT where concept descendent-of #14679004 "Occupation"
-
+*/
 
 ValueSet: JobType
 Id: job-type
 Title:     "JobType"
 Description: "Töötamise liik"
+* ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system SCT where concept descendent-of #365539008 "Finding of type of job (should be replaced)"
 
 Profile:        MpiSocialHistoryOccupation
@@ -61,7 +64,7 @@ Description:    "Töötamine"
 * component contains job 1..1 MS and type 0..1 MS and status 0..1 MS
 * component[job].code = SCT#160922003 "Job details"
 * component[job].value[x] only CodeableConcept
-* component[job].valueCodeableConcept from Occupation
+* component[job].valueCodeableConcept from EEBaseOccupation
 * component[job].valueCodeableConcept ^short = "Tööamet."
 * component[type].code = SCT#224361009 "Type of job"
 * component[type].value[x] only CodeableConcept
@@ -76,6 +79,7 @@ Description:    "Töötamine"
 
 Instance: Occupation
 InstanceOf: MpiSocialHistoryOccupation
+Description: "Example of patient occupation"
 Usage: #example
 * code 
   * coding[loinc] = LN#11341-5
@@ -83,5 +87,5 @@ Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"
 * performer = Reference(Organization/Org1)
-* component[job].valueCodeableConcept = SCT#236324005 "Factory worker"
+* component[job].valueCodeableConcept = EEBaseOccupation#22122501 "Pediaater"
 * component[type].valueCodeableConcept = SCT#160923008 "Sedentary job"

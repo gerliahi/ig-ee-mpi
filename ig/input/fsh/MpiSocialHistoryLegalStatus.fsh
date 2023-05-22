@@ -50,6 +50,7 @@ Description:    "The legal status that applies to the patient."
 
 Instance: LegalStatus
 InstanceOf: MpiSocialHistoryLegalStatus
+Description: "Example of patient legal status"
 Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"

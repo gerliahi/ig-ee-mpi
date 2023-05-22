@@ -9,7 +9,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-link"
 * version = "5.0.0"
-* name = "Link"
+* name = "EEMPIPatientLink"
 * title = "Patient Link"
 * status = #draft
 * kind = #operation
@@ -75,7 +75,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-unlink"
 * version = "5.0.0"
-* name = "Unlink"
+* name = "EEMPIPatientUnlink"
 * title = "Patient Unlink"
 * status = #draft
 * kind = #operation
@@ -141,7 +141,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-foreigner"
 * version = "5.0.0"
-* name = "Foreigner"
+* name = "EEMPIPatientForeignerSearch"
 * title = "Patient Foreigner"
 * status = #draft
 * kind = #operation
@@ -211,7 +211,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-lookup"
 * version = "5.0.0"
-* name = "Lookup"
+* name = "EEMPIPatientLookup"
 * title = "Patient Lookup"
 * status = #draft
 * kind = #operation
@@ -251,7 +251,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-legal-guardian"
 * version = "5.0.0"
-* name = "Legal Guardian status"
+* name = "EEMPIPatientLegalGuardianStatus"
 * title = "Patient Legal Guardians"
 * status = #draft
 * kind = #operation
@@ -291,7 +291,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-power-of-attorney"
 * version = "5.0.0"
-* name = "Power of Attorney status"
+* name = "EEMPIPatientPowerOfAttorneyStatus"
 * title = "Patient power of attorneys"
 * status = #draft
 * kind = #operation
@@ -331,7 +331,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-education"
 * version = "5.0.0"
-* name = "Education status"
+* name = "EEMPIPatientEducationStatus"
 * title = "Patient Education"
 * status = #draft
 * kind = #operation
@@ -376,7 +376,7 @@ Usage: #definition
 * extension[=].valueCode = #trial-use
 * url = "https://fhir.ee/OperationDefinition/Patient-generate-mrn"
 * version = "5.0.0"
-* name = "Generate MRN"
+* name = "EEMPIPatientGenerateMRN"
 * title = "Generate Medical Record Number"
 * status = #draft
 * kind = #operation

@@ -31,6 +31,7 @@ Description: "For use in ED, ambulance, for anonymous patients and environmental
 
 Instance: PatientUnknown
 InstanceOf: EEMPIPatientUnknown
+Description: "Example of unknown patient"
 Usage: #example
 * id = "pat-unk"
 * identifier[0]
@@ -42,7 +43,7 @@ Usage: #example
   * text = "Malle Maasikas"
 * gender = #male
 * birthDate = "1973-02-10"
-  * extension[accuracyIndicator].valueCoding = DateAccuracyIndicator#AAA "DMY"
+  * extension[accuracyIndicator].valueCoding = EEBaseDateAccuracyIndicator#AAA "Day, month and year are accurate"
 * address
   * use = #temp
   * country = "EE"

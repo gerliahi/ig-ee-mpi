@@ -71,6 +71,7 @@ Description:    "Puue määr"
 
 Instance: Disability
 InstanceOf: MpiSocialHistoryDisability
+Description: "Example of patient disability"
 Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"

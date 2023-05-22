@@ -10,7 +10,7 @@ Description: "Patsient ja tema kontakt- ja seotud isikud."
 //* patient only Reference(EEBasePatient)
 * active 1..1 MS
 * relationship 1..* MS
-* relationship ^short = "Seosetüübid - kontaktisiku roll ja isiklik seos (sugulane, tuttav, ..). "
+* relationship ^short = "Seosetüübid - kontaktisiku roll ja isiklik seos (sugulane, tuttav, ..)."
 * name 0..1 MS
 * name ^short = "Kontaktisiku nimi."
 //* telecom MS
@@ -28,6 +28,7 @@ Description: "Patsient ja tema kontakt- ja seotud isikud."
 
 Instance: PatientIgorBossenkoSon
 InstanceOf: MPIRelatedPerson
+Description: "Example of patient son"
 Usage: #example
 * id = "relpat11"
 * patient = Reference(Patient/pat1)
@@ -41,6 +42,7 @@ Usage: #example
 
 Instance: PatientIgorBossenkoWife
 InstanceOf: MPIRelatedPerson
+Description: "Example of patient wife and emergency contact"
 Usage: #example
 * id = "relpat12"
 * patient = Reference(Patient/pat1)

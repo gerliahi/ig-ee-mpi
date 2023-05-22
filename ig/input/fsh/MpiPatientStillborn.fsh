@@ -56,6 +56,7 @@ Description: "Profiil surnultsündinu andmete kirjeldamiseks"
 
 Instance: PatientStillborn
 InstanceOf: EEMPIPatientStillborn
+Description: "Example of stillborn patient"
 Usage: #example
 * id = "pat-stillborn"
 * identifier[0]

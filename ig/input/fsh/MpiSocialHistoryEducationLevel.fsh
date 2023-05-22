@@ -5,6 +5,7 @@ Description: "The highest education level achieved by patient"
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
+* ^hierarchyMeaning = #is-a
 * #0 "Less than primary education, pre-primary education" "Alusharidus (koolieelne haridus) või alghariduseta"
 * #1 "Basic education (grades 1-6 of basic school)" "Põhiharidus (põhikooli 1.-6. klass)"
 * #2 "Basic education (grades 7-9 of basic school)" "Põhiharidus (põhikooli 7.-9. klass)"
@@ -76,6 +77,7 @@ Description:    "Haridusetase"
 
 Instance: EducationLevel
 InstanceOf: MpiSocialHistoryEducationLevel
+Description: "Example of patient education"
 Usage: #example
 * subject = Reference(Patient/pat1)
 * issued = "1995-06-21T00:00:00+02:00"

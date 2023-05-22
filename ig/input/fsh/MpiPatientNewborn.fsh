@@ -25,6 +25,7 @@ Description: "Profiil vastsündinu andmete kirjeldamiseks"
 
 Instance: PatientNewborn
 InstanceOf: EEMPIPatientNewborn
+Description: "Example of newborn patient"
 Usage: #example
 * id = "pat-newborn"
 * identifier[0]

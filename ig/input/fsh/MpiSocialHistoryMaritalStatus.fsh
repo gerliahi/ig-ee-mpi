@@ -34,6 +34,7 @@ Description:    "Abielu või suhe liik."
 
 Instance: MaritalStatus
 InstanceOf: MpiSocialHistoryMaritalStatus
+Description: "Example of patient marital status"
 Usage: #example
 * subject = Reference(Patient/pat1)
 * issued = "1995-06-21T00:00:00+02:00"

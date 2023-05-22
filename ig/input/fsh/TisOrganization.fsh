@@ -3,6 +3,7 @@ Alias: RIK = https://ariregister.rik.ee
 
 Instance: ExampleHospital
 InstanceOf: Organization
+Description: "Example of organization Org1"
 Usage: #example
 * id = "Org1"
 * name = "Kodality General Hospital"
@@ -17,6 +18,7 @@ Usage: #example
 
 Instance: ExampleSynlab
 InstanceOf: Organization
+Description: "Example of organization Synlab"
 Usage: #example
 * id = "synlab"
 * name = "SYNLAB EESTI OÜ"
@@ -30,8 +32,9 @@ Usage: #example
   * address.city = "Tallinn"
 
 
-Instance: ExampleHaigekassa
+Instance: ExampleTervisekassa
 InstanceOf: Organization
+Description: "Example of organization Tervisekassa"
 Usage: #example
 * id = "ins"
 * name = "Eesti Haigekassa"
