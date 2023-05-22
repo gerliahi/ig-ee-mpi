@@ -396,7 +396,7 @@ Usage: #definition
 * parameter[=].min = 1
 * parameter[=].max = "1"
 * parameter[=].documentation = "Returns text representataion of Medical Record Number."
-* parameter[=].type = #string
+* parameter[=].type = #Identifier
 
 
 
