@@ -7,7 +7,11 @@ Description: "The legal status that applies to the patient. The legal status ind
 * ^caseSensitive = false
 * #T0 "Teovõimeline"
 * #T1 "Piiratud teovõimega valimisõiguseta"
+  * ^designation[0].language = #et
+  * ^designation[=].value = "Piiratud valimisõiguseta"
 * #T3 "Piiratud teovõimega valimisõigusega"
+  * ^designation[0].language = #et
+  * ^designation[=].value = "Piiratud valimisõigusega"
 
 ValueSet:    LegalStatus
 Id:          legal-status
