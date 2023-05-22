@@ -258,7 +258,7 @@ Usage: #definition
 * experimental = false
 * date = "2023-03-26T15:21:02+11:00"
 * publisher = "HL7 Estonia"
-* description = "The list of legal guardians soecified in the Population Register."
+* description = "The list of legal guardians specified in the Population Register."
 * jurisdiction = $m49.htm#Estonia "Estonia"
 * affectsState = true
 * code = #legal-guardian
@@ -354,11 +354,49 @@ Usage: #definition
 * parameter[=].documentation = "A direct resource reference to the patient resource."
 * parameter[=].type = #Reference
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
+* parameter[+].name = #nocache
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default _true_."
+* parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
 * parameter[=].documentation = "Returns Bundle (with type 'collection') with Observation instances."
 * parameter[=].type = #Bundle
+
+Instance: Patient-generate-mrn
+InstanceOf: OperationDefinition
+Usage: #definition
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* extension[=].valueInteger = 1
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension[=].valueCode = #trial-use
+* url = "https://fhir.ee/OperationDefinition/Patient-generate-mrn"
+* version = "5.0.0"
+* name = "Generate MRN"
+* title = "Generate Medical Record Number"
+* status = #draft
+* kind = #operation
+* experimental = false
+* date = "2023-03-26T15:21:02+11:00"
+* publisher = "HL7 Estonia"
+* description = "Generate the new unique Medical Record Number may be used for unknown/anonymous patient's identification."
+* jurisdiction = $m49.htm#Estonia "Estonia"
+* affectsState = true
+* code = #mrn
+* resource = #Patient
+* system = false
+* type = true
+* instance = false
+* parameter[0].name = #return
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Returns text representataion of Medical Record Number."
+* parameter[=].type = #string
+
 
 
