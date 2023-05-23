@@ -5,9 +5,15 @@ Description: "Puude raskusaste"
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
-* #KESKMINE_PUUE "Keskmine puue"
-* #RASKE_PUUE "Raske puue"
-* #SYGAV_PUUE "sügav puue"
+* #keskmine "Keskmine puue"
+  * ^designation[0].language = #et  
+  * ^designation[=].value = "KESKMINE_PUUE"
+* #raske "Raske puue"
+  * ^designation[0].language = #et  
+  * ^designation[=].value = "RASKE_PUUE"
+* #sygav "Sügav puue"
+  * ^designation[0].language = #et  
+  * ^designation[=].value = "SYGAV_PUUE"
 
 
 ValueSet: DisabilityLevel
@@ -76,4 +82,4 @@ Usage: #example
 * subject = Reference(Patient/pat1)
 * effectivePeriod.start = "2021-11-23"
 * performer = Reference(Organization/Org1)
-* valueCodeableConcept = DisabilityLevel#KESKMINE_PUUE "Keskmine puue"
+* valueCodeableConcept = DisabilityLevel#keskmine "Keskmine puue"

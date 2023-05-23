@@ -7,16 +7,36 @@ Description: "The highest education level achieved by patient"
 * ^caseSensitive = false
 * ^hierarchyMeaning = #is-a
 * #0 "Less than primary education, pre-primary education" "Alusharidus (koolieelne haridus) või alghariduseta"
+  * ^designation[0].language = #et  
+  * ^designation[=].value = "Hariduseta, alusharidus"
 * #1 "Basic education (grades 1-6 of basic school)" "Põhiharidus (põhikooli 1.-6. klass)"
-* #2 "Basic education (grades 7-9 of basic school)" "Põhiharidus (põhikooli 7.-9. klass)"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Algharidus"
+* #2 "Basic education (grades 7-9 of basic school)" "Põhiharidus (põhikooli 7.-9. klass)" 
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Põhiharidus"
 * #3 "Upper secondary education" "Keskharidus"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Üldkeskharidus"
   * #34 "General secondary education" "Üldkeskharidus (gümnaasiumi 10.-12. klass)"
+    * ^designation[0].language = #et 
+    * ^designation[=].value = "Keskeriharidus keskhariduse baasil"  
   * #35 "Vocational secondary education (incl. secondary special or technical education), based on basic education" "Kutsekeskharidus (sh keskeri- või tehnikumiharidus) põhihariduse baasil"
+    * ^designation[0].language = #et 
+    * ^designation[=].value = "Kutsehariduse omandamine koos põhihariduse omandamisega"
 * #4 "Vocational secondary education or vocational courses based on secondary education" "Kutsekeskharidus või kutseõpe keskhariduse baasil"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Kutsekeskharidus"
 * #5 "Vocational secondary education and a technical education based on secondary education" "Keskeri- ja tehnikumiharidus keskhariduse baasil"
 * #6 "Bachelor's or equivalent level education (professional higher education and vocational higher education, diploma courses)" "Bakalaureus või sellega võrdsustatud haridus (rakendus- ja kutsekõrgharidus, diplomiõpe)"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Bakalaureus või sellega võrdsustatud, rakenduskõrgharidus"
 * #7 "Master's or equivalent level education" "Magister või sellega võrdsustatud haridus"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Magister või sellega võrdsustatud haridus"  
 * #8 "Doctoral or equivalent level education" "Doktor või sellega võrdsustatud haridus"
+  * ^designation[0].language = #et 
+  * ^designation[=].value = "Doktor või sellega võrdsustatud haridus"
 * #9 "Not elsewhere classified" "Mujal liigitamata"
 
 

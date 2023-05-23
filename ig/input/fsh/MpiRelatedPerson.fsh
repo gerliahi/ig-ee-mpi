@@ -7,21 +7,45 @@ Title: "Person Relationship"
 Description: "Person relationship"
 * ^experimental = false
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
-* SCT#72705000 "Mother"
-* SCT#66839005 "Father"
-* SCT#67822003 "Child"
-* SCT#127848009 "Spouse"
-* SCT#444210007 "Cohabitee in relationship with subject"
+
+* ^compose.include.system = SCT
+
+* ^compose.include.concept[+].code = #72705000
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Ema"
+* ^compose.include.concept[+].code = #66839005
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Isa"
+* ^compose.include.concept[+].code = #67822003
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Laps"
+* ^compose.include.concept[+].code = #127848009
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Abikaasa"
+* ^compose.include.concept[+].code = #444210007
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Reg.elukaaslane"
 
 ValueSet: EEMPIPersonRelationshipClass
 Id: ee-mpi-person-relationship-class
 Title: "Person Relationship Class"
 Description: "Person relationship class"
 * ^experimental = false
-* v3-RoleClass#ECON "Emergency contact"
-* v3-RoleClass#GUARD "Guardian"
-* v3-RoleClass#DEPEN "Dependent"
-* v3-RoleClass#NOK "Next of kin"
+
+* ^compose.include.system = v3-RoleClass
+
+* ^compose.include.concept[+].code = #ECON
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Hädaabi kontakt"
+* ^compose.include.concept[+].code = #GUARD
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Eestkostja"
+* ^compose.include.concept[+].code = #DEPEN
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Eestkostetav "
+* ^compose.include.concept[+].code = #NOK
+* ^compose.include.concept[=].designation[+].language = #et
+* ^compose.include.concept[=].designation[=].value = "Sugulane"
 
 
 Profile: MPIRelatedPerson
