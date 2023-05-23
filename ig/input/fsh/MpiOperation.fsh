@@ -193,6 +193,12 @@ Usage: #definition
 * parameter[=].max = "*"
 * parameter[=].documentation = "Telekom'i väärtus, e-mail või tel. number."
 * parameter[=].type = #ContactPoint
+* parameter[+].name = #nocache
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default *false*."
+* parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
 * parameter[=].min = 0
@@ -233,6 +239,12 @@ Usage: #definition
 * parameter[=].max = "1"
 * parameter[=].documentation = "The identifier we are looking for."
 * parameter[=].type = #Identifier
+* parameter[+].name = #nocache
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default *false*."
+* parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -274,6 +286,12 @@ Usage: #definition
 * parameter[=].documentation = "A direct resource reference to the patient resource."
 * parameter[=].type = #Reference
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
+* parameter[+].name = #nocache
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default *false*."
+* parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -314,6 +332,12 @@ Usage: #definition
 * parameter[=].documentation = "A direct resource reference to the patient resource."
 * parameter[=].type = #Reference
 * parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
+* parameter[+].name = #nocache
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default *false*."
+* parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
 * parameter[=].min = 1
@@ -358,7 +382,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default _true_."
+* parameter[=].documentation = "Specifies when the operation should ignore the value stored in the cache and should re-request data from the source. By default *false*."
 * parameter[=].type = #boolean
 * parameter[+].name = #return
 * parameter[=].use = #out
