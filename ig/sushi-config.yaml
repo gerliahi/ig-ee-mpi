@@ -63,6 +63,12 @@ pages:
     title: Veakoodid
   operations.md:
     title: Toetavad operatsioonid
+  contact.md:
+    title: Contact Us
+  download.md:
+    title: Download  
+  auth.md:
+    title: Autentimine         
 
 #   implementation.xml:
 #   examples.xml:
@@ -101,6 +107,8 @@ menu:
   Artefaktid: artifacts.html
   Sisukord: toc.html
   Muu:
+    "Contact Us": contact.html
+    Downloads: download.html
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
