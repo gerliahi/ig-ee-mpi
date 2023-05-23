@@ -141,7 +141,7 @@ Patsiendi loomisel/muutmisel tuleb saata päringu FHIR-i endpointile, näiteks a
 Päringus tuleb määrata mitu tunnust REST päringu päises (Header-is):
 - päringu keha vormingu määramiseks (päis "Accept" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
 - vastuse keha vormingu määramiseks (päis "Content-Type" väärtustega "application/json" või application/xml või "application/fhir+json" või application/fhir+xml)
-- autoriseerimise (päis "Authorization" mille sisu kirjeldatud lehel [Autoriseerimine](auth.html))
+- autentimine (päis "Authorization" mille sisu kirjeldatud lehel [Autentimine](auth.html))
 - unikaalne päringu id (päis "x-road-id"). 
 - selgitab miks antud päring tehtud (päis "x-road-issue"). Kasutatakse Andmejälgijas. Päise edastatakse alampäringutele teiste süsteemidesse.
 - loogilise transaktsiooni tunnus (päis "x-transaction-id" FIXME). Päise edastatakse alampäringutele teiste süsteemidesse.
