@@ -18,9 +18,9 @@ NB! Siinkohal on oluline, et riigi valik tehtaks vastavalt dokumendi väljastanu
 
 ### Välisriigi isiku kood
 Välisriigist pärit patsiendi puhul, kellel puudub Eesti isikukood ja kes on identifitseeritav mingi välisriigi dokumendi alusel, kasutada dokumenteerimiseks TIS-põhist välisriigi isiku URL-i (vastavad identifitseerimissüsteemid on kirjeldatud koodisüsteemis [IdentitySystem](https://build.fhir.org/ig/HL7EE/ig-ee-base/CodeSystem-ee-identity-system.html). Siin on oluline meelde jätta, et eelviimane url-i komponent on kolmekohaline riigikood ja viimane on identifikaatori tüüp koodisüsteemist [v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203). Olulisemad tüübid on:
-- NI - nationanal identifier
-- PPN - passport
-- BCT - birth certificate.   
+- NI - riiklik identifikaator / nationanal identifier
+- PPN - passi number / passport
+- BCT - sünnitunnistus / birth certificate.   
 Identifitseerimissüsteem kasutatakse väljas **system** and identifikaator või passinumber väljas **value**. Täiendavalt saab määrata dokumendinumbri lõpukuupäeva.
 
 Siinkohal on oluline, et riigi valik tehtaks vastavalt dokumendi väljastanud riigile, mitte vastavalt rahvusele/kodakondsusele. Eelistada dokumendil isikukoodi ID-d, selle puudumisel sisestada vastava dokumendi number. 
@@ -46,7 +46,7 @@ Välisriigi isiku esitamise näide, kus patsiendil on Soome isikukood ja USA pas
 ```
 
 ### Tundmatu isiku kood
-Kui isikukood ei ole teada ehk tegemist on nö tundmatu isikuga, siis TTO saab pärida tundmatu isikkukoodi MPI-st kasutada operatsiooni [MRN koodi genereerimiseks](OperationDefinition-Patient-generate-mrn.html).
+Kui isikukood ei ole teada ehk tegemist on nö tundmatu isikuga, siis TTO saab pärida tundmatu isikkukoodi MPI-st kasutada operatsiooni [MR numbri genereerimiseks](OperationDefinition-Patient-generate-mrn.html).
 Genereeritud koodi saab kasutada koos **https://fhir.ee/sid/pid/est/mr** urliga.
 
 Tundmatu isiku esitamise näide1:
