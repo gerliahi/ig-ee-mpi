@@ -40,7 +40,7 @@ Description:    "Seadusliku eeskostja staatus"
 * subject only Reference(EEBasePatient)
 * performer 1.. MS
 * performer only Reference(EEBaseOrganization or EEBasePractitionerRole or EEBaseRelatedPerson)
-* performer ^short = "Asutus ja/või isikud kellel on eeskoste õigus."
+* performer ^short = "Asutus ja/või isikud, kellel on eeskoste õigus."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * valueCodeableConcept from GuardianStatus
