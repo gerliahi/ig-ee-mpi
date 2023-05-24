@@ -11,19 +11,19 @@ Profile: EEMPIPatientStillborn
 Parent: EEMPIPatient
 Id: ee-mpi-patient-stillborn
 Title: "EE MPI Patient Stillborn"
-Description: "Profiil surnultsündinu andmete kirjeldamiseks"
+Description: "Profiil surnult sündinu andmete kirjeldamiseks"
 * ^status = #draft
 * ^publisher = "HL7 Estonia"
 * active = false (exactly)
 //* gender ..1 MS
-* name ^short = "Surnultsündinu nimi võib puududa"
+* name ^short = "Surnult sündinu nimi võib puududa"
 * name ..1
 * name contains temp 0..1 MS
 * name[temp] ^short = "Ajutine nimi"
 * name[temp].use = #temp (exactly)
 * name[temp].family 1..1 MS
 * name[temp].given 0..1 MS
-* name[temp].given ^short = "Surnultsündinu eesnimi võib puududa"
+* name[temp].given ^short = "Surnult sündinu eesnimi võib puududa"
 /*
 * name.use = #nickname (exactly)
 * name.family 0..1 MS
@@ -31,7 +31,7 @@ Description: "Profiil surnultsündinu andmete kirjeldamiseks"
 */
 * identifier 1..
 * identifier.system from EEMPIPatientIdentityStillborn (required)
-* identifier ^short = "Surnultsündinu identifikaator"
+* identifier ^short = "Surnult sündinu identifikaator"
 * telecom ..0
 * birthDate 1.. MS
 /*
@@ -45,7 +45,7 @@ Description: "Profiil surnultsündinu andmete kirjeldamiseks"
 */
 * deceased[x] 1..1 MS 
 * deceased[x] only dateTime
-* deceased[x] ^short = "Patsiendi surnuaeg"
+* deceased[x] ^short = "Patsiendi surmaaeg"
 
 * address ..0
 * maritalStatus ..0
@@ -63,16 +63,11 @@ Usage: #example
 //  * system = "urn:pin:hl7.ee:pid:prn:90006399"
 //  * system = "https://fhir.ee/sid/pid/est/npi"
   * system = "https://fhir.ee/sid/pid/est/ni"
-  * value = "msvgh378544y"
+  * value = "60712121111"
 * active = false 
-* gender = #male
-* name
-  * use = #temp
-  * family = "Maasikas"
 * gender = #female
-* birthDate = "2023-02-14"
-* birthDate.extension[birthTime].valueDateTime = "2023-02-14T16:00:00.000Z"
-* deceasedDateTime = "2023-02-14T16:00:00.000Z"
-* multipleBirthInteger = 1
+* birthDate = "2007-12-12"
+* birthDate.extension[birthTime].valueDateTime = "2007-12-12T16:00:00.000Z"
+* deceasedDateTime = "2007-12-12T16:00:00.000Z"
 
 
