@@ -62,7 +62,7 @@ Usage: #example
 * identifier[0]
 //  * system = "urn:pin:hl7.ee:pid:prn:90006399"
 //  * system = "https://fhir.ee/sid/pid/est/npi"
-  * system = "https://fhir.ee/sid/pid/est/ni"
+  * system = "https://fhir.ee/sid/pid/est/npi"
   * value = "60712121111"
 * active = false 
 * gender = #female
