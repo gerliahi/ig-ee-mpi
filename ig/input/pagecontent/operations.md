@@ -1,5 +1,5 @@
 FHIR operatsioon on eritegevus, mida ei ole võimalik või väga raske väljendada standardse FHIR süntaksi kaudu.
-Tegevuse realiseerimine operatsioonina võib tingida teise osapoole (nt xTee andmekogu) halb vastuse aeg päringule, mis vastasel juhul halvaks rakenduse tööd.
+Tegevuse realiseerimine operatsioonina võib olla tingitud teise osapoole (nt xTee andmekogu) käideltadavuse tõttu või erilise liigipäsu reeglite tõttu.
 
 Tavaliselt välised allikad kust MPI pärib andmed ei toeta lehekülgede numeratsiooni päringu parameetrina. Selle tõttu enamus MPI operatsioonidest tagastavad andmed "collection" tüübi Bundle-ina, mis ei sisalda informatsiooni ridade arvust ega leheküljetest. 
 
@@ -60,6 +60,7 @@ Toetavate parameetrite hulka kuuluvad: identifikaator ja süsteem kust päritaks
 Hetkel toetatkse päring
 - Rahvastikuregistrist (system=https://rahvastikuregister.ee)
 - MPI Patsiendiregistrist (system=https://mpi.tehik.ee)
+
 ```
 GET {MPI}/Patient/$lookup?identifier=https://rahvastikuregister.ee|52007010062
 ```
@@ -512,14 +513,17 @@ ning saab vastuseks Observationi
 ```
 
 ### Puude määr
-
-TODO
+Operatsioon tagastab [Disability](file:///Users/igor/source/hl7/ig-ee-mpi/ig/output/StructureDefinition-ee-mpi-socialhistory-disability.html) objekti
 
 
 ## Tööprintsiip
 ### Cache
-MPI operatsioonid teostavad päringu algallikasse (registri) ning tagastavad vastuse kasutajale ilma andmete salvestamata MPI andmebaasi. Iga välise registri eest vastutab omaette mikroteenus, mis säilitab päringu vastust oma vahemälus konfigureeritud ajaks (tavaliselt ühe päeva jooksul). Korduv operatsiooni väljakutse teeb uue päringu algallikasse ja värskendab andmed vahemälus.
+MPI operatsioonid teostavad päringu algallikasse (registri) ning tagastavad vastuse kasutajale ilma andmete salvestamata MPI andmebaasi. Iga välise registri eest vastutab omaette mikroteenus, mis säilitab päringu vastust oma vahemälus konfigureeritud ajaks (tavaliselt ühe päeva jooksul). Päring algallikast värskendab andmed vahemälus.
+
 ### Vahemälust pärimine
+Iga operatsioon mis toetab vahemälu sisaldab parameetri *nocache*. *nocache* parameetri vaikimisi väärtuseks on *false*, s.t. vaikimisi andmed võetakse vahemälust. xTee päringu käivitamiseks ilmutatud kujul *nocache* väärtuseks tuleb määrata *true*. 
+
+<!--
 Vahemälust andmete pärimiseks tuleb esitada päringu Observation endpointile koos otsitava mõiste koodiga. Näiteks:
 ```
 GET {MPI}/Observation?subject=Patient/1&code=http://snomed.info/sct|1193838006 
@@ -529,3 +533,4 @@ Kahest või rohkematest andmeallikatest andmete pärimisel tuleb loendada kõik 
 ```
 GET {MPI}/Observation?subject=Patient/1&code=http://snomed.info/sct|1193838006&code=http://loinc.org|82589-3
 ```
+--/>
