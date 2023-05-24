@@ -52,7 +52,7 @@ Profile:        MpiSocialHistoryDisability
 Parent:         EEBaseObservation
 Id:             ee-mpi-socialhistory-disability
 Title:          "EE MPI SocialHistory Disability"
-Description:    "Puue määr"
+Description:    "Puude raskusaste"
 * status = #final (exactly)
 * category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code = LN#95377-8 "Disability type" (exactly)
@@ -62,7 +62,7 @@ Description:    "Puue määr"
 * subject only Reference(EEBasePatient)
 * performer 0..1 MS
 * performer only Reference(EEBaseOrganization or EEBasePractitionerRole)
-* performer ^short = "Asutus ja/või isik kes määras puue."
+* performer ^short = "Asutus ja/või isik, kes määras puude."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * valueCodeableConcept from DisabilityLevel
