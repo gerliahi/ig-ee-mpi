@@ -36,7 +36,7 @@ Description:    "Hooldusõigus"
 * subject only Reference(EEBasePatient)
 * performer 1.. MS 
 * performer only Reference(EEBaseRelatedPerson)
-* performer ^short = "Isik(ud) kellel on hooldusõigus."
+* performer ^short = "Isik(ud), kellel on hooldusõigus."
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * valueCodeableConcept from PowerOfAttorney
