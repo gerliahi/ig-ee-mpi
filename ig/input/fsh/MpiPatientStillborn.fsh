@@ -69,5 +69,5 @@ Usage: #example
 * birthDate = "2007-12-12"
 * birthDate.extension[birthTime].valueDateTime = "2007-12-12T16:00:00.000Z"
 * deceasedDateTime = "2007-12-12T16:00:00.000Z"
-
+* multipleBirthInteger = 1
 
