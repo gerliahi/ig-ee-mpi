@@ -30,14 +30,14 @@ Usage: #example
 * id = "pat-newborn"
 * identifier[0]
   * system = "https://fhir.ee/sid/pid/est/ni"
-  * value = "msvgh378544y"
+  * value = "60712121111"
 * active = true 
 * gender = #male
 * name[temp]
   * use = #temp
   * family = "Maasikas"
 * gender = #male
-* birthDate = "1973-02-10"
+* birthDate = "2007-12-12"
 * multipleBirthInteger = 1
 /*
 * address
