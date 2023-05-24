@@ -53,7 +53,7 @@ Profile:        MpiSocialHistoryEducationLevel
 Parent:         EEBaseObservation
 Id:             ee-mpi-socialhistory-education-level
 Title:          "EE MPI SocialHistory Education Level"
-Description:    "Haridusetase"
+Description:    "Haridustase"
 * status = #final (exactly)
 * category[obscat] = OBSCAT#social-history "Social history" (exactly)
 * code.coding 2..2
@@ -76,9 +76,9 @@ Description:    "Haridusetase"
 
 * effective[x] 0..1 MS
 * effective[x] only Period
-* effective[x] ^short = "Period mille jooksul haridustegevus jätkus või millal vastav haridustase kätte saadud"
+* effective[x] ^short = "Period, mille jooksul haridustegevus jätkus või millal vastav haridustase kätte saadi"
 * issued 1.. MS
-* issued ^short = "Ajahetk millal antud haridustase fikseeritud"
+* issued ^short = "Ajahetk, millal antud haridustase fikseeriti"
 * subject 1..1 MS
 * subject only Reference(EEBasePatient)
 * performer 0..0 MS
