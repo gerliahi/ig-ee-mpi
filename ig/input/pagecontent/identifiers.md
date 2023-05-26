@@ -4,7 +4,7 @@ Käesolev juhend kirjeldab isikute identifitseerimise dokumenteerimise korda Ees
 Detailne info identifitseerimissüsteemi kohta on leitav [EEBase](https://build.fhir.org/ig/HL7EE/ig-ee-base/identity-system.html) juurutusjuhendis.
 
 ### Eesti isikukood
-11-kohaline patsiendi Eesti isikukood, mida kasutada patsiendi tuvastamiseks lahtris „isikukood“.
+11-kohaline Eesti isikukood, mida kasutada patsiendi tuvastamiseks lahtris „isikukood“.
 Patsienti identifitseeriv kood koos vastava OID-ga moodustab TIS-s terviku ehk unikaalse patsiendi koodi. Eesti isikukoodi puhul kasutada URL-i **https://fhir.ee/sid/pid/est/ni**. Eesti isikukoodi esitamise näide:
 ```json
   "identifier" : [
@@ -14,7 +14,7 @@ Patsienti identifitseeriv kood koos vastava OID-ga moodustab TIS-s terviku ehk u
     }
   ]
 ```
-NB! Siinkohal on oluline, et riigi valik tehtaks vastavalt dokumendi väljastanud riigile, mitte vastavalt rahvusele/kodakondsusele. Ehk, kui isikul on olemas Eesti isikukood, aga rahvuselt või kodakondsuselt on ta muu riigi kodanik, siis valida tuleb ikkagi Eesti riigi tunnus isikukoodi juures.
+NB! Siinkohal on oluline, et riigi valik saaks tehtud vastavalt dokumendi väljastanud riigile, mitte vastavalt rahvusele/kodakondsusele. Ehk, kui isikul on olemas Eesti isikukood, aga rahvuselt või kodakondsuselt on ta muu riigi kodanik, siis tuleb valida ikkagi Eesti riigi tunnus isikukoodi juures.
 
 ### Välisriigi isiku kood
 Välisriigist pärit patsiendi puhul, kellel puudub Eesti isikukood ja kes on identifitseeritav mingi välisriigi dokumendi alusel, kasutada dokumenteerimiseks TIS-põhist välisriigi isiku URL-i (vastavad identifitseerimissüsteemid on kirjeldatud koodisüsteemis [IdentitySystem](https://build.fhir.org/ig/HL7EE/ig-ee-base/CodeSystem-ee-identity-system.html). Siin on oluline meelde jätta, et eelviimane url-i komponent on kolmekohaline riigikood ja viimane on identifikaatori tüüp koodisüsteemist [v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203). Olulisemad tüübid on:
