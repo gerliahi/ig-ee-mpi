@@ -1,4 +1,4 @@
-Käesolev juhend kirjeldab isikute identifitseerimise dokumenteerimise korda Eesti isikukoodiga, välisriigi isiku koodiga, tundmatute ja surnult sündinute andmete edastamisel tervise infosüsteemi (MPI). Lisaks on selgitatud dubleerivate patsiendi isiku koodide sidumise lahendust.
+Käesolev juhend kirjeldab isikute identifitseerimise dokumenteerimise korda Eesti isikukoodiga, välisriigi isiku koodiga ning tundmatute ja surnult sündinute andmete edastamisel tervise infosüsteemi MPI teenusesse. Lisaks on selgitatud dubleerivate patsientide koodide sidumise lahendust.
 
 ### Identity system
 Detailne info identifitseerimissüsteemi kohta on leitav [EEBase](https://build.fhir.org/ig/HL7EE/ig-ee-base/identity-system.html) juurutusjuhendis.
